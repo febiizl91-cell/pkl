@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login - Kopi Ruang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <style>
+      .admin-login-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+        padding: 2rem;
+      }
+      
+      .admin-login-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15);
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      .admin-login-header {
+        margin-bottom: 2rem;
+      }
+      
+      .admin-login-header h1 {
+        font-size: 1.75rem;
+        margin: 0.5rem 0 0;
+        color: #1f2937;
+      }
+      
+      .admin-login-header p {
+        color: #6b7280;
+        margin: 0.5rem 0 0;
+      }
+      
+      .admin-form {
+        display: grid;
+        gap: 1.5rem;
+      }
+      
+      .form-group {
+        display: grid;
+        gap: 0.5rem;
+      }
+      
+      .form-group label {
+        font-weight: 600;
+        color: #374151;
+      }
+      
+      .form-group input {
+        padding: 0.95rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+      }
+      
+      .form-group input:focus {
+        outline: none;
+        border-color: #8b6f47;
+        box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.1);
+      }
+      
+      .admin-submit {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-login-page">
+      <div class="admin-login-container">
+        <div class="admin-login-header">
+          <h1>🔒 Admin Panel</h1>
+          <p>Masuk untuk mengelola konten Kopi Ruang</p>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div style="margin-bottom: 1.5rem;">
+          {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}" style="padding: 1rem; border-radius: 12px; margin-bottom: 0.5rem;">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        
+        <form method="post" class="admin-form">
+          {{ form.hidden_tag() }}
+          
+          <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(placeholder="Masukkan username") }}
+            {% if form.username.errors %}
+            <span style="color: #dc2626; font-size: 0.875rem;">{{ form.username.errors[0] }}</span>
+            {% endif %}
+          </div>
+          
+          <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(placeholder="Masukkan password") }}
+            {% if form.password.errors %}
+            <span style="color: #dc2626; font-size: 0.875rem;">{{ form.password.errors[0] }}</span>
+            {% endif %}
+          </div>
+          
+          <div class="admin-submit">
+            {{ form.submit(class="btn btn-primary", style="width: 100%;") }}
+          </div>
+        </form>
+        
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb;">
+        
+        <p style="text-align: center; color: #6b7280; font-size: 0.875rem; margin: 0;">
+          Kembali ke <a href="{{ url_for('index') }}" style="color: #8b6f47; font-weight: 600;">website utama</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard - Kopi Ruang{% endblock %}
+
+{% block content %}
+<section class="admin-dashboard">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <div>
+        <h1 style="margin: 0; font-size: 2.5rem;">🎛️ Admin Dashboard</h1>
+        <p style="color: #6b7280; margin: 0.5rem 0 0;">Kelola konten dan layanan Kopi Ruang</p>
+      </div>
+      <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary">Logout</a>
+    </div>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-group">
+      {% for category, message in messages %}
+      <div class="flash-message flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    
+    <div class="stats-grid">
+      <a href="{{ url_for('admin_products') }}" class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-content">
+          <p class="stat-label">Produk</p>
+          <p class="stat-value">{{ stats.total_products }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_promos') }}" class="stat-card">
+        <div class="stat-icon">🎁</div>
+        <div class="stat-content">
+          <p class="stat-label">Promo</p>
+          <p class="stat-value">{{ stats.total_promos }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_outlets') }}" class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div class="stat-content">
+          <p class="stat-label">Outlet</p>
+          <p class="stat-value">{{ stats.total_outlets }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_events') }}" class="stat-card">
+        <div class="stat-icon">🎪</div>
+        <div class="stat-content">
+          <p class="stat-label">Event</p>
+          <p class="stat-value">{{ stats.total_events }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_bookings') }}" class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div class="stat-content">
+          <p class="stat-label">Reservasi</p>
+          <p class="stat-value">{{ stats.total_bookings }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_contacts') }}" class="stat-card">
+        <div class="stat-icon">💬</div>
+        <div class="stat-content">
+          <p class="stat-label">Pesan</p>
+          <p class="stat-value">{{ stats.total_contacts }}</p>
+        </div>
+      </a>
+      
+      <a href="{{ url_for('admin_newsletter') }}" class="stat-card">
+        <div class="stat-icon">📧</div>
+        <div class="stat-content">
+          <p class="stat-label">Newsletter</p>
+          <p class="stat-value">{{ stats.total_newsletter }}</p>
+        </div>
+      </a>
+    </div>
+    
+    <div class="admin-actions">
+      <a href="{{ url_for('admin_product_add') }}" class="btn btn-primary">+ Tambah Produk</a>
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Lihat Website</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .admin-dashboard {
+    padding: 3rem 0;
+    min-height: calc(100vh - 300px);
+    background: #fff8f0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    transition: all 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  }
+  
+  .stat-icon {
+    font-size: 2.5rem;
+  }
+  
+  .stat-content {
+    margin: 0;
+  }
+  
+  .stat-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .stat-value {
+    color: #1f2937;
+    font-size: 1.875rem;
+    font-weight: 800;
+    margin: 0.25rem 0 0;
+  }
+  
+  .admin-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+</style>
+{% endblock %}

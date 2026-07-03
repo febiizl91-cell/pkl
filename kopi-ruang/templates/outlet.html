@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}Outlet - Kopi Ruang{% endblock %}
+
+{% block content %}
+<section class="outlet-section">
+  <div class="container">
+    <div style="margin-bottom: 3rem;">
+      <p class="eyebrow">Temukan Kami</p>
+      <h1>Lokasi Outlet Kopi Ruang</h1>
+      <p>Kunjungi outlet Kopi Ruang terdekat untuk pengalaman ngopi terbaik</p>
+    </div>
+    
+    <div class="outlet-filters" style="margin-bottom: 2rem;">
+      <label>Filter berdasarkan kota:</label>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+        <button class="filter-btn active" data-filter="all" type="button">Semua</button>
+        <button class="filter-btn" data-filter="Jakarta" type="button">Jakarta</button>
+        <button class="filter-btn" data-filter="Bandung" type="button">Bandung</button>
+        <button class="filter-btn" data-filter="Surabaya" type="button">Surabaya</button>
+      </div>
+    </div>
+    
+    <div class="outlets-grid">
+      {% for outlet in outlets %}
+      <article class="card outlet-card" data-city="{{ outlet['city'] }}">
+        <div class="outlet-header">
+          <h3>📍 {{ outlet['name'] }}</h3>
+          <p class="outlet-city">{{ outlet['city'] }}</p>
+        </div>
+        <div class="outlet-details">
+          <p><strong>Alamat:</strong><br>{{ outlet['address'] }}</p>
+          <p><strong>Jam Buka:</strong><br>{{ outlet['operating_hours'] }}</p>
+          <p><strong>Telepon:</strong><br><a href="tel:{{ outlet['phone'] }}">{{ outlet['phone'] }}</a></p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+          <button class="btn btn-secondary" style="flex: 1;">Lihat Peta</button>
+          <button class="btn btn-primary" style="flex: 1;">Hubungi</button>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .outlet-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #fdf7ee 0%, #fff8f0 100%);
+    min-height: calc(100vh - 200px);
+  }
+  
+  .outlet-filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
+  
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 999px;
+    background: white;
+    color: #374151;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #8b6f47;
+    color: white;
+    border-color: #8b6f47;
+  }
+  
+  .outlets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .outlet-card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .outlet-header {
+    margin-bottom: 1rem;
+  }
+  
+  .outlet-header h3 {
+    margin: 0 0 0.5rem;
+  }
+  
+  .outlet-city {
+    background: rgba(139, 111, 71, 0.12);
+    color: #8b6f47;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .outlet-details {
+    flex: 1;
+  }
+  
+  .outlet-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  
+  .outlet-details a {
+    color: #8b6f47;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .outlet-details a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}

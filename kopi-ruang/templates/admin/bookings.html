@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Reservasi - Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+  <div class="container">
+    <h1 style="margin: 0 0 2rem;">📅 Reservasi</h1>
+    
+    <div class="card">
+      {% if bookings %}
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Tanggal & Waktu</th>
+            <th>Jumlah Orang</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+          <tr>
+            <td><strong>{{ booking['name'] }}</strong></td>
+            <td>{{ booking['booking_date'] }} {{ booking['booking_time'] }}</td>
+            <td>{{ booking['people_count'] }} orang</td>
+            <td><span class="badge" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6;">Confirmed</span></td>
+            <td>
+              <a href="#" class="btn-small">Lihat</a>
+              <a href="#" class="btn-small danger">Batal</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p style="text-align: center; color: #6b7280; padding: 2rem;">Belum ada reservasi.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .admin-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 300px);
+    background: #fff8f0;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table th {
+    background: #f3f4f6;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .admin-table tr:hover {
+    background: #f9fafb;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(139, 111, 71, 0.12);
+    color: #8b6f47;
+    font-size: 0.825rem;
+    font-weight: 600;
+  }
+  
+  .btn-small {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .btn-small:hover {
+    background: #e5e7eb;
+  }
+  
+  .btn-small.danger {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+  
+  .btn-small.danger:hover {
+    background: rgba(220, 38, 38, 0.2);
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Kelola Event - Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h1 style="margin: 0;">🎪 Kelola Event</h1>
+      <a href="#add-event" class="btn btn-primary">+ Tambah Event</a>
+    </div>
+    
+    <div class="card">
+      {% if events %}
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Tanggal</th>
+            <th>Lokasi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+          <tr>
+            <td><strong>{{ event['title'] }}</strong></td>
+            <td>{{ event['date'] }}</td>
+            <td>{{ event['location'] }}</td>
+            <td>
+              <a href="#" class="btn-small">Edit</a>
+              <a href="#" class="btn-small danger">Hapus</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p style="text-align: center; color: #6b7280; padding: 2rem;">Belum ada event.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .admin-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 300px);
+    background: #fff8f0;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table th {
+    background: #f3f4f6;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .admin-table tr:hover {
+    background: #f9fafb;
+  }
+  
+  .btn-small {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .btn-small:hover {
+    background: #e5e7eb;
+  }
+  
+  .btn-small.danger {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+  
+  .btn-small.danger:hover {
+    background: rgba(220, 38, 38, 0.2);
+  }
+</style>
+{% endblock %}

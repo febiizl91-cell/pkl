@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+  <div class="container">
+    <div style="margin-bottom: 2rem;">
+      <a href="{{ url_for('admin_products') }}" style="color: #8b6f47; text-decoration: none;">← Kembali ke Produk</a>
+      <h1 style="margin: 0.5rem 0 0;">{{ title }}</h1>
+    </div>
+    
+    <div class="card" style="max-width: 700px;">
+      <form method="post" class="admin-form">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+          <label>{{ form.name.label }}</label>
+          {{ form.name(class='input-field') }}
+          {% if form.name.errors %}
+          <span class="error-text">{{ form.name.errors[0] }}</span>
+          {% endif %}
+        </div>
+        
+        <div class="form-group">
+          <label>{{ form.category.label }}</label>
+          {{ form.category(class='input-field') }}
+          {% if form.category.errors %}
+          <span class="error-text">{{ form.category.errors[0] }}</span>
+          {% endif %}
+        </div>
+        
+        <div class="form-group">
+          <label>{{ form.description.label }}</label>
+          {{ form.description(class='textarea-field', rows=5) }}
+          {% if form.description.errors %}
+          <span class="error-text">{{ form.description.errors[0] }}</span>
+          {% endif %}
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>{{ form.price.label }}</label>
+            {{ form.price(class='input-field', placeholder='25000') }}
+            {% if form.price.errors %}
+            <span class="error-text">{{ form.price.errors[0] }}</span>
+            {% endif %}
+          </div>
+          
+          <div class="form-group">
+            <label>{{ form.featured.label }}</label>
+            <div style="padding-top: 0.5rem;">
+              {{ form.featured() }}
+              <span style="margin-left: 0.5rem;">Tampilkan di halaman utama</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>{{ form.image_url.label }}</label>
+          {{ form.image_url(class='input-field') }}
+          {% if form.image_url.errors %}
+          <span class="error-text">{{ form.image_url.errors[0] }}</span>
+          {% endif %}
+        </div>
+        
+        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+          {{ form.submit(class='btn btn-primary') }}
+          <a href="{{ url_for('admin_products') }}" class="btn btn-secondary">Batal</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .admin-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 300px);
+    background: #fff8f0;
+  }
+  
+  .admin-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .input-field,
+  .textarea-field {
+    padding: 0.95rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  
+  .input-field:focus,
+  .textarea-field:focus {
+    outline: none;
+    border-color: #8b6f47;
+    box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.1);
+  }
+  
+  .error-text {
+    color: #dc2626;
+    font-size: 0.875rem;
+  }
+</style>
+{% endblock %}

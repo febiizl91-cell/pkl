@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Daftar | Kopi Ruang{% endblock %}
+
+{% block content %}
+<section class="section auth-section">
+  <div class="container auth-card">
+    <p class="eyebrow">Daftar</p>
+    <h2>Buat akun baru untuk Kopi Ruang</h2>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      <label>{{ form.name.label }}{{ form.name(class='input-field') }}</label>
+      <label>{{ form.email.label }}{{ form.email(class='input-field') }}</label>
+      <label>{{ form.password.label }}{{ form.password(class='input-field') }}</label>
+      <button class="btn btn-primary" type="submit">Daftar</button>
+    </form>
+    <p>Sudah punya akun? <a href="{{ url_for('login') }}">Masuk di sini</a>.</p>
+  </div>
+</section>
+{% endblock %}

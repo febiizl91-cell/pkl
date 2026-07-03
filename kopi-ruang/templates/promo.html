@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Promo & Event - Kopi Ruang{% endblock %}
+
+{% block content %}
+<section class="promo-section">
+  <div class="container">
+    <div style="margin-bottom: 3rem;">
+      <p class="eyebrow">Tawaran Spesial</p>
+      <h1>Promo & Event Kopi Ruang</h1>
+      <p>Jangan lewatkan kesempatan emas untuk menikmati kopi dengan harga istimewa</p>
+    </div>
+    
+    <div style="margin-bottom: 3rem;">
+      <h2 style="margin-bottom: 1.5rem;">🎁 Promo</h2>
+      <div class="promo-grid">
+        {% for promo in promos %}
+        <div class="card promo-card">
+          <div class="promo-header">
+            <h3>{{ promo['title'] }}</h3>
+            <span class="promo-badge">{{ promo['discount'] }}% OFF</span>
+          </div>
+          <p>{{ promo['description'] }}</p>
+          <p class="promo-validity">Berlaku hingga: {{ promo['end_date'] }}</p>
+          <button class="btn btn-primary" style="width: 100%;">Gunakan Promo</button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div>
+      <h2 style="margin-bottom: 1.5rem;">🎪 Event Mendatang</h2>
+      <div class="events-grid">
+        {% for event in events %}
+        <div class="card event-card">
+          <div class="event-date">{{ event['date'] }}</div>
+          <h3>{{ event['title'] }}</h3>
+          <p>{{ event['description'] }}</p>
+          <p><strong>📍 {{ event['location'] }}</strong></p>
+          <button class="btn btn-primary" style="width: 100%;">Daftar Event</button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .promo-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #fdf7ee 0%, #fff8f0 100%);
+    min-height: calc(100vh - 200px);
+  }
+  
+  .promo-grid,
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .promo-card,
+  .event-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .promo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .promo-badge {
+    background: #8b6f47;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  
+  .promo-validity {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .event-date {
+    background: #8b6f47;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+</style>
+{% endblock %}
