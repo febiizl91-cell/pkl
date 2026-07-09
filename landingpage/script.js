@@ -217,6 +217,9 @@ const els = {
   discount: document.getElementById('discount-copy'),
   shipping: document.getElementById('shipping-copy'),
   grandTotal: document.getElementById('grand-total-copy'),
+  grandTotalBreakdown: document.getElementById('grand-total-breakdown'),
+  serviceFee: document.getElementById('service-fee-copy'),
+  checkoutItems: document.getElementById('checkout-items'),
   summaryItemCount: document.getElementById('summary-item-count'),
   summaryStatus: document.getElementById('summary-status'),
   summaryCourier: document.getElementById('summary-courier'),
@@ -489,11 +492,54 @@ function cartSummary() {
   const courier = (els.courierSelect?.value || 'Reguler|18000').split('|');
   let shipping = Number(courier[1] || 0);
   const voucher = (els.voucherInput?.value || '').trim().toUpperCase();
+  const serviceFee = 0;
   let discount = voucher === 'TM10' ? Math.round(subtotal * 0.1) : 0;
   if (voucher === 'FREESHIP') shipping = 0;
   discount = Math.min(discount, subtotal);
-  return { subtotal, shipping, discount, total: Math.max(subtotal + shipping - discount, 0), voucher };
+  return { subtotal, shipping, discount, serviceFee, total: Math.max(subtotal + shipping + serviceFee - discount, 0), voucher };
 }
+function renderCheckoutItems() {
+  if (!els.checkoutItems) return;
+  els.checkoutItems.innerHTML = cart.length ? cart.map((item) => {
+    const product = products.find((entry) => entry.id === item.productId);
+    const name = product?.name || 'Produk tidak tersedia';
+    const unitPrice = Number(item.price || 0);
+    const image = product && hasOfficialImage(product) ? `<img src="${product.image}" alt="${name}">` : '<div class="checkout-image-fallback">TM</div>';
+    return `<article class="checkout-summary-item">
+      ${image}
+      <div>
+        <h4>${name}</h4>
+        <p>${item.color} / ${item.size}</p>
+        <span>${money.format(unitPrice)} x ${item.qty}</span>
+      </div>
+      <strong>${money.format(unitPrice * Number(item.qty || 0))}</strong>
+    </article>`;
+  }).join('') : '<p class="checkout-items-empty">Belum ada produk di keranjang.</p>';
+}
+function renderAddressPreview() {
+  const get = (id) => document.getElementById(id)?.value.trim() || '';
+  const label = get('recipient-label') || 'Rumah';
+  const name = get('recipient-name') || 'Lengkapi nama penerima';
+  const phone = get('recipient-phone') || 'Nomor telepon belum diisi';
+  const parts = [
+    get('recipient-address'),
+    get('recipient-district'),
+    get('recipient-city'),
+    get('recipient-province'),
+    get('recipient-postal') ? 'Kode Pos ' + get('recipient-postal') : ''
+  ].filter(Boolean);
+  const note = get('recipient-note');
+  const full = parts.length ? parts.join(', ') + (note ? ' | Catatan: ' + note : '') : 'Alamat lengkap akan tampil di sini setelah kamu mengisi detail pengiriman.';
+  const labelNode = document.getElementById('address-preview-label');
+  const nameNode = document.getElementById('address-preview-name');
+  const phoneNode = document.getElementById('address-preview-phone');
+  const fullNode = document.getElementById('address-preview-full');
+  if (labelNode) labelNode.textContent = label;
+  if (nameNode) nameNode.textContent = name;
+  if (phoneNode) phoneNode.textContent = phone;
+  if (fullNode) fullNode.textContent = full;
+}
+
 function renderTotals() {
   const summary = cartSummary();
   if (!els.subtotal) return;
@@ -504,7 +550,10 @@ function renderTotals() {
   els.subtotal.textContent = money.format(summary.subtotal);
   els.discount.textContent = money.format(summary.discount);
   els.shipping.textContent = money.format(summary.shipping);
+  if (els.serviceFee) els.serviceFee.textContent = money.format(summary.serviceFee);
   els.grandTotal.textContent = money.format(summary.total);
+  if (els.grandTotalBreakdown) els.grandTotalBreakdown.textContent = money.format(summary.total);
+  renderCheckoutItems();
   if (els.summaryItemCount) els.summaryItemCount.textContent = itemCount + ' item';
   if (els.summaryStatus) els.summaryStatus.textContent = itemCount ? 'Siap dicek' : 'Keranjang kosong';
   if (els.summaryCourier) els.summaryCourier.textContent = courierName;
@@ -591,8 +640,10 @@ function renderAuth() {
     if (name && !name.value) name.value = customer.name;
     if (email && !email.value) email.value = customer.email;
   }
+  renderAddressPreview();
   renderOrders();
 }
+
 function logoutCustomer() {
   localStorage.removeItem(STORE_KEYS.customer);
   els.loginModal?.classList.remove('open');
@@ -667,6 +718,14 @@ function bindStorefront() {
   els.voucherInput?.addEventListener('input', renderTotals);
   els.courierSelect?.addEventListener('change', renderTotals);
   els.paymentSelect?.addEventListener('change', renderTotals);
+  ['recipient-name', 'recipient-phone', 'recipient-label', 'recipient-postal', 'recipient-province', 'recipient-city', 'recipient-district', 'recipient-address', 'recipient-note'].forEach((id) => {
+    const node = document.getElementById(id);
+    node?.addEventListener('input', renderAddressPreview);
+    node?.addEventListener('change', renderAddressPreview);
+  });
+  document.querySelector('[data-focus-address]')?.addEventListener('click', () => {
+    document.getElementById('recipient-address')?.focus();
+  });
   els.checkoutForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!cart.length) { toast('Keranjang masih kosong.'); return; }
@@ -694,6 +753,7 @@ function bindStorefront() {
       subtotal: summary.subtotal,
       shipping: summary.shipping,
       discount: summary.discount,
+      serviceFee: summary.serviceFee,
       voucher: summary.voucher,
       total: summary.total,
       status: 'Menunggu pembayaran',
@@ -710,6 +770,7 @@ function bindStorefront() {
     els.orderCreated.hidden = false;
     els.orderCreated.textContent = `Pesanan ${order.number} berhasil dibuat.`;
     els.checkoutForm.reset();
+    renderAddressPreview();
     renderAuth();
     toast('Pesanan berhasil dibuat.');
     location.hash = '#account-dashboard';

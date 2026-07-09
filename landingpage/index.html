@@ -10,7 +10,7 @@
     <meta property="og:description" content="Belanja jaket Troublemaker resmi dengan pengalaman toko online modern." />
     <meta property="og:type" content="website" />
     <title>Troublemaker | Official Jacket Store</title>
-    <link rel="stylesheet" href="styles.css?v=luxury-smoke-1" />
+    <link rel="stylesheet" href="styles.css?v=corporate-clean-1" />
   </head>
   <body>
     <a class="skip-link" href="#produk">Lewati ke produk</a>
@@ -19,7 +19,7 @@
       <div class="shell nav-shell">
         <a class="brand" href="#home" aria-label="Troublemaker Home">
           <span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span>
-          <span class="brand-name">Troublemaker</span>
+          <span class="brand-name">TroubleMaker</span>
         </a>
 
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Buka navigasi">Menu</button>
@@ -41,7 +41,7 @@
         <div class="shell hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">Official jacket store</p>
-            <h1>Outerwear Troublemaker untuk karakter yang tidak ikut arus.</h1>
+            <h1>Outerwear TroubleMaker untuk karakter yang tidak ikut arus.</h1>
             <p class="hero-lead">Tampilan baru yang lebih premium, cepat, dan responsif. Katalog disiapkan hanya untuk produk jaket Troublemaker resmi dari asset brand kamu.</p>
             <div class="hero-actions">
               <a class="primary-button" href="#produk">Belanja Sekarang</a>
@@ -57,6 +57,7 @@
           <div class="hero-stage reveal" aria-label="Visual produk resmi Troublemaker">
             <div class="hero-product-frame">
               <img id="hero-product-image" src="assets/hero-orang.jpeg" alt="Model memakai jaket Troublemaker hitam dengan hood dan kacamata" />
+              <img class="hero-brand-title" src="assets/hero-title.jpeg" alt="Troublemaker" aria-label="Troublemaker" />
               <div class="hero-product-empty" id="hero-product-empty" hidden>
                 <span>TM</span>
                 <strong>Foto jaket resmi akan tampil di sini</strong>
@@ -220,94 +221,127 @@
             </div>
           </div>
 
-          <aside class="checkout-box" id="checkout" aria-label="Form checkout">
-            <div class="checkout-box-header">
-              <span class="checkout-icon" aria-hidden="true">🛒</span>
-              <div>
-                <p class="eyebrow">Checkout Aman</p>
-                <h3>Ringkasan Pesanan</h3>
-              </div>
-            </div>
-
-            <div class="summary-card checkout-summary-pro" aria-label="Ringkasan pembayaran">
-              <div class="summary-hero">
-                <div>
-                  <span>Total pembayaran</span>
-                  <strong id="grand-total-copy">Rp 0</strong>
-                </div>
-                <small id="summary-status">Keranjang kosong</small>
-              </div>
-              <div class="summary-overview">
-                <div>
-                  <span>Total item</span>
-                  <strong id="summary-item-count">0 item</strong>
-                </div>
-                <div>
-                  <span>Kurir</span>
-                  <strong id="summary-courier">Reguler</strong>
-                </div>
-              </div>
-              <div class="summary-breakdown">
-                <div class="summary-line"><span><span aria-hidden="true">🧾</span> Subtotal</span><strong id="subtotal-copy">Rp 0</strong></div>
-                <div class="summary-line"><span><span aria-hidden="true">🏷️</span> Diskon</span><strong id="discount-copy">Rp 0</strong></div>
-                <div class="summary-line"><span><span aria-hidden="true">🚚</span> Ongkos kirim</span><strong id="shipping-copy">Rp 0</strong></div>
-              </div>
-              <div class="summary-mini-grid" aria-label="Detail checkout">
-                <div><span>Pembayaran</span><strong id="summary-payment">QRIS</strong></div>
-                <div><span>Voucher</span><strong id="summary-voucher">Tidak ada</strong></div>
-              </div>
-            </div>
-
+          <aside class="checkout-stack" id="checkout" aria-label="Form checkout">
             <form id="checkout-form" class="stack-form modern-checkout-form">
-              <div class="form-section-title address-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-address.svg" alt="" /></span><strong>Alamat Pengiriman Resmi</strong></div>
-              <div class="address-card" aria-label="Detail alamat pengiriman">
-                <div class="address-grid two">
-                  <label>Nama penerima<input id="recipient-name" required placeholder="Nama lengkap penerima" /></label>
-                  <label>No. HP aktif<input id="recipient-phone" required placeholder="08xxxxxxxxxx" /></label>
+              <section class="checkout-box address-checkout-card" aria-label="Alamat pengiriman">
+                <div class="checkout-box-header">
+                  <span class="checkout-icon" aria-hidden="true">📍</span>
+                  <div>
+                    <p class="eyebrow">Alamat Pengiriman</p>
+                    <h3>Tujuan Pengiriman</h3>
+                  </div>
                 </div>
-                <label>Email<input id="recipient-email" type="email" required placeholder="email@domain.com" /></label>
-                <div class="address-grid two">
-                  <label>Label alamat
-                    <select id="recipient-label" required>
-                      <option value="Rumah">Rumah</option>
-                      <option value="Kantor">Kantor</option>
-                      <option value="Apartemen">Apartemen</option>
-                      <option value="Kost">Kost</option>
-                    </select>
-                  </label>
-                  <label>Kode pos<input id="recipient-postal" required inputmode="numeric" placeholder="Contoh: 40123" /></label>
-                </div>
-                <div class="address-grid three">
-                  <label>Provinsi<input id="recipient-province" required placeholder="Provinsi" /></label>
-                  <label>Kota/Kabupaten<input id="recipient-city" required placeholder="Kota atau kabupaten" /></label>
-                  <label>Kecamatan<input id="recipient-district" required placeholder="Kecamatan" /></label>
-                </div>
-                <label>Alamat lengkap<textarea id="recipient-address" rows="3" required placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan/desa"></textarea></label>
-                <label>Patokan / catatan kurir<textarea id="recipient-note" rows="2" placeholder="Contoh: pagar hitam, dekat minimarket"></textarea></label>
-              </div>
 
-              <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-delivery.png" alt="" /></span><strong>Pengiriman</strong></div>
-              <label>Kurir
-                <select id="courier-select" required>
-                  <option value="Reguler|18000">Reguler - Rp18.000</option>
-                  <option value="Express|32000">Express - Rp32.000</option>
-                  <option value="Same Day|45000">Same Day - Rp45.000</option>
-                </select>
-              </label>
+                <div class="address-preview">
+                  <div class="address-preview-icon" aria-hidden="true"><img src="assets/icon-address.svg" alt="" /></div>
+                  <div class="address-preview-copy">
+                    <div class="address-preview-topline">
+                      <span class="address-label-pill" id="address-preview-label">Rumah</span>
+                      <button class="secondary-button address-change-button" type="button" data-focus-address>Ubah Alamat</button>
+                    </div>
+                    <strong id="address-preview-name">Lengkapi nama penerima</strong>
+                    <span id="address-preview-phone">Nomor telepon belum diisi</span>
+                    <p id="address-preview-full">Alamat lengkap akan tampil di sini setelah kamu mengisi detail pengiriman.</p>
+                  </div>
+                </div>
 
-              <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-payment.png" alt="" /></span><strong>Metode Pembayaran</strong></div>
-              <label>Pembayaran
-                <select id="payment-select" required>
-                  <option value="QRIS">QRIS</option>
-                  <option value="Virtual Account">Virtual Account</option>
-                  <option value="E-Wallet">E-Wallet</option>
-                  <option value="Transfer Manual">Transfer Manual</option>
-                </select>
-              </label>
-              <label>Voucher<input id="voucher-input" placeholder="TM10 / FREESHIP" /></label>
-              <button class="primary-button full checkout-submit" type="submit">Bayar Sekarang</button>
+                <div class="address-card" aria-label="Detail alamat pengiriman">
+                  <div class="address-grid two">
+                    <label>Nama penerima<input id="recipient-name" required placeholder="Nama lengkap penerima" /></label>
+                    <label>No. HP aktif<input id="recipient-phone" required placeholder="08xxxxxxxxxx" /></label>
+                  </div>
+                  <label>Email<input id="recipient-email" type="email" required placeholder="email@domain.com" /></label>
+                  <div class="address-grid two">
+                    <label>Label alamat
+                      <select id="recipient-label" required>
+                        <option value="Rumah">Rumah</option>
+                        <option value="Kantor">Kantor</option>
+                        <option value="Apartemen">Apartemen</option>
+                        <option value="Kost">Kost</option>
+                      </select>
+                    </label>
+                    <label>Kode pos<input id="recipient-postal" required inputmode="numeric" placeholder="Contoh: 40123" /></label>
+                  </div>
+                  <div class="address-grid three">
+                    <label>Provinsi<input id="recipient-province" required placeholder="Provinsi" /></label>
+                    <label>Kota/Kabupaten<input id="recipient-city" required placeholder="Kota atau kabupaten" /></label>
+                    <label>Kecamatan<input id="recipient-district" required placeholder="Kecamatan" /></label>
+                  </div>
+                  <label>Alamat lengkap<textarea id="recipient-address" rows="3" required placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan/desa"></textarea></label>
+                  <label>Patokan / catatan kurir<textarea id="recipient-note" rows="2" placeholder="Contoh: pagar hitam, dekat minimarket"></textarea></label>
+                </div>
+              </section>
+
+              <section class="checkout-box order-summary-card" aria-label="Ringkasan pesanan">
+                <div class="checkout-box-header">
+                  <span class="checkout-icon" aria-hidden="true">🛒</span>
+                  <div>
+                    <p class="eyebrow">Checkout Aman</p>
+                    <h3>Ringkasan Pesanan</h3>
+                  </div>
+                </div>
+
+                <div class="summary-card checkout-summary-pro" aria-label="Ringkasan pembayaran">
+                  <div class="summary-hero">
+                    <div>
+                      <span>Total pembayaran</span>
+                      <strong id="grand-total-copy">Rp 0</strong>
+                    </div>
+                    <small id="summary-status">Keranjang kosong</small>
+                  </div>
+                  <div class="summary-overview">
+                    <div>
+                      <span>Total item</span>
+                      <strong id="summary-item-count">0 item</strong>
+                    </div>
+                    <div>
+                      <span>Kurir</span>
+                      <strong id="summary-courier">Reguler</strong>
+                    </div>
+                  </div>
+                  <div class="checkout-items" id="checkout-items" aria-label="Daftar produk checkout"></div>
+                  <div class="summary-breakdown">
+                    <div class="summary-line"><span><span aria-hidden="true">🧾</span> Subtotal</span><strong id="subtotal-copy">Rp 0</strong></div>
+                    <div class="summary-line"><span><span aria-hidden="true">🚚</span> Ongkos kirim</span><strong id="shipping-copy">Rp 0</strong></div>
+                    <div class="summary-line"><span><span aria-hidden="true">🏷️</span> Diskon</span><strong id="discount-copy">Rp 0</strong></div>
+                    <div class="summary-line"><span><span aria-hidden="true">⚙</span> Biaya layanan</span><strong id="service-fee-copy">Rp 0</strong></div>
+                    <div class="summary-line total"><span>Total Pembayaran</span><strong id="grand-total-breakdown">Rp 0</strong></div>
+                  </div>
+                  <div class="summary-mini-grid" aria-label="Detail checkout">
+                    <div><span>Pembayaran</span><strong id="summary-payment">QRIS</strong></div>
+                    <div><span>Voucher</span><strong id="summary-voucher">Tidak ada</strong></div>
+                  </div>
+                </div>
+
+                <div class="checkout-controls">
+                  <div>
+                    <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-delivery.png" alt="" /></span><strong>Pengiriman</strong></div>
+                    <label>Kurir
+                      <select id="courier-select" required>
+                        <option value="Reguler|18000">Reguler - Rp18.000</option>
+                        <option value="Express|32000">Express - Rp32.000</option>
+                        <option value="Same Day|45000">Same Day - Rp45.000</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div>
+                    <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-payment.png" alt="" /></span><strong>Metode Pembayaran</strong></div>
+                    <label>Pembayaran
+                      <select id="payment-select" required>
+                        <option value="QRIS">QRIS</option>
+                        <option value="Virtual Account">Virtual Account</option>
+                        <option value="E-Wallet">E-Wallet</option>
+                        <option value="Transfer Manual">Transfer Manual</option>
+                      </select>
+                    </label>
+                  </div>
+                  <label>Voucher<input id="voucher-input" placeholder="TM10 / FREESHIP" /></label>
+                </div>
+
+                <button class="primary-button full checkout-submit" type="submit">Bayar Sekarang</button>
+                <div class="order-created" id="order-created" hidden></div>
+              </section>
             </form>
-            <div class="order-created" id="order-created" hidden></div>
           </aside>
         </div>
       </section>
@@ -321,7 +355,7 @@
           </div>
           <div class="contact-card">
             <a href="mailto:cs@troublemaker.test">cs@troublemaker.test</a>
-            <a href="https://wa.me/62812345678">WhatsApp 08-1234-5678</a>
+            <a href="https://wa.me/62812345678">WhatsApp 085229582814</a>
             <span>Jam operasional 09.00-18.00</span>
           </div>
         </div>
@@ -376,7 +410,7 @@
     <footer class="site-footer">
       <div class="shell footer-layout">
         <div>
-          <a class="brand" href="#home"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span>Troublemaker</span></a>
+          <a class="brand" href="#home"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span>TroubleMaker</span></a>
           <p>Official jacket store experience for Troublemaker.</p>
         </div>
         <div>
