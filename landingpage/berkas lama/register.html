@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register customer Troublemaker untuk mulai belanja jaket resmi, menyimpan wishlist, dan melihat riwayat pesanan." />
+    <meta name="theme-color" content="#0f1014" />
+    <title>Register | Troublemaker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page register-page">
+    <main class="auth-screen">
+      <section class="auth-visual" aria-label="Troublemaker register">
+        <a class="brand auth-brand" href="index.html"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span class="brand-name">Troublemaker</span></a>
+        <div class="auth-visual-copy">
+          <p class="eyebrow">New customer</p>
+          <h1>Buat akun untuk pengalaman belanja yang lebih cepat.</h1>
+          <p>Simpan data profil, checkout lebih rapi, dan pantau status pesanan Troublemaker dari dashboard.</p>
+        </div>
+      </section>
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <a class="back-link" href="index.html">Kembali ke toko</a>
+        <p class="eyebrow">Register</p>
+        <h2 id="auth-title">Buat akun customer</h2>
+        <p class="form-note">Data disimpan di localStorage browser untuk demo toko statis.</p>
+        <form id="standalone-register-form" class="stack-form auth-form">
+          <label>Nama<input id="standalone-register-name" autocomplete="name" required placeholder="Nama lengkap" /></label>
+          <label>Email<input id="standalone-register-email" type="email" autocomplete="email" required placeholder="email@domain.com" /></label>
+          <label>Password<input id="standalone-register-password" type="password" autocomplete="new-password" required placeholder="Minimal 6 karakter" /></label>
+          <button class="primary-button full" type="submit">Register</button>
+        </form>
+        <p class="auth-switch">Sudah punya akun? <a href="login.html">Login</a></p>
+      </section>
+    </main>
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

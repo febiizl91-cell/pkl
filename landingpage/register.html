@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register customer Troublemaker untuk mulai belanja jaket resmi, menyimpan wishlist, dan melihat riwayat pesanan." />
+    <meta name="theme-color" content="#0f1014" />
+    <title>Register | Troublemaker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page register-page">
+    <main class="auth-screen auth-screen-premium register-screen-premium">
+      <section class="auth-visual" aria-label="Troublemaker register">
+        <a class="brand auth-brand" href="index.html"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span class="brand-name">Troublemaker</span></a>
+        <div class="auth-visual-copy">
+          <p class="eyebrow">New customer</p>
+          <h1>Buat akun untuk belanja yang lebih personal dan efisien.</h1>
+          <p>Simpan profil, kelola wishlist, checkout lebih cepat, dan pantau status pesanan jaket resmi dari satu dashboard.</p>
+          <div class="auth-proof-grid" aria-label="Keunggulan akun Troublemaker">
+            <span><strong>Profile</strong> data tersimpan</span>
+            <span><strong>Wishlist</strong> jaket favorit</span>
+            <span><strong>Orders</strong> mudah dipantau</span>
+          </div>
+        </div>
+        <div class="auth-ambient-card" aria-hidden="true">
+          <span>TM</span>
+          <strong>Customer Account</strong>
+          <small>Premium shopping access</small>
+        </div>
+      </section>
+
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <div class="auth-card-premium">
+          <div class="auth-card-topbar">
+            <a class="back-link" href="index.html">Kembali</a>
+            <span class="auth-secure-pill">Quick signup</span>
+          </div>
+          <div class="auth-heading-block">
+            <p class="eyebrow">Register</p>
+            <h2 id="auth-title">Buat akun customer</h2>
+            <p class="form-note">Daftar untuk menyimpan data belanja, wishlist, cart, dan riwayat pesanan di browser ini.</p>
+          </div>
+
+          <form id="standalone-register-form" class="stack-form auth-form auth-form-premium">
+            <label class="auth-field">Nama
+              <span class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">ID</span><input id="standalone-register-name" autocomplete="name" required placeholder="Nama lengkap" /></span>
+            </label>
+            <label class="auth-field">Email
+              <span class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">@</span><input id="standalone-register-email" type="email" autocomplete="email" required placeholder="nama@email.com" /></span>
+            </label>
+            <label class="auth-field">Password
+              <span class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">*</span><input id="standalone-register-password" type="password" autocomplete="new-password" required placeholder="Minimal 6 karakter" /></span>
+            </label>
+            <div class="auth-options-row auth-register-note">
+              <span>Data demo tersimpan di localStorage browser.</span>
+              <a href="login.html">Login</a>
+            </div>
+            <button class="primary-button full auth-submit" type="submit">Buat Akun</button>
+          </form>
+
+          <div class="auth-divider"><span>atau</span></div>
+          <p class="auth-switch">Sudah punya akun? <a href="login.html">Masuk ke dashboard</a></p>
+        </div>
+      </section>
+    </main>
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

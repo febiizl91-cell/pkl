@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CasualStep, toko online sepatu casual dengan katalog, filter ukuran, wishlist, cart, checkout, dan pelacakan pesanan." />
+    <meta name="description" content="TroubleMaker, toko online jaket streetwear dengan katalog, filter ukuran, wishlist, cart, checkout, login, dan pelacakan pesanan." />
     <meta name="theme-color" content="#18212f" />
-    <title>CasualStep | Toko Online Sepatu Casual</title>
+    <title>TroubleMaker | Toko Online Jaket Streetwear</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -14,9 +14,9 @@
 
     <header class="site-header">
       <div class="shell nav-shell">
-        <a class="brand" href="#home" aria-label="CasualStep Home">
-          <span class="brand-mark">CS</span>
-          <span>CasualStep</span>
+        <a class="brand" href="#home" aria-label="TroubleMaker Home">
+          <span class="brand-mark">TM</span>
+          <span>TroubleMaker</span>
         </a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
@@ -38,35 +38,35 @@
       <section class="hero">
         <div class="shell hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Sneakers, slip-on, canvas, loafers</p>
-            <h1>Temukan sepatu casual yang pas di kaki dan pas di gaya.</h1>
-            <p>Belanja sepatu dengan filter ukuran, stok per warna, size chart, wishlist, checkout cepat, dan status pesanan yang jelas.</p>
+            <p class="eyebrow">Bomber, hoodie, denim, varsity</p>
+            <h1>Jaket streetwear TroubleMaker untuk gaya harian yang lebih berani.</h1>
+            <p>Belanja jaket dengan filter ukuran, stok per warna, size chart, wishlist, checkout cepat, login customer, dan status pesanan yang jelas.</p>
             <form class="hero-search" id="hero-search-form">
-              <label class="sr-only" for="hero-search-input">Cari sepatu</label>
-              <input id="hero-search-input" type="search" placeholder="Cari sneakers putih, canvas hitam, loafers kerja..." />
+              <label class="sr-only" for="hero-search-input">Cari jaket</label>
+              <input id="hero-search-input" type="search" placeholder="Cari bomber hitam, hoodie oversized, varsity navy..." />
               <button class="primary-button" type="submit">Cari</button>
             </form>
             <div class="hero-metrics" aria-label="Ringkasan toko">
-              <span><strong>36-45</strong> ukuran</span>
+              <span><strong>S-XXL</strong> ukuran</span>
               <span><strong>24 jam</strong> proses</span>
               <span><strong>7 hari</strong> retur</span>
             </div>
           </div>
           <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80" alt="Sepasang sepatu sneakers casual merah di latar terang" />
+            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80" alt="Jaket streetwear hitam tergantung di studio fashion" />
           </div>
         </div>
       </section>
 
-      <section class="quick-panel" aria-label="Keunggulan CasualStep">
+      <section class="quick-panel" aria-label="Keunggulan TroubleMaker">
         <div class="shell quick-grid">
           <article>
             <strong>Stok per varian</strong>
-            <span>Ukuran dan warna tervalidasi sebelum checkout.</span>
+            <span>Ukuran jaket dan warna tervalidasi sebelum checkout.</span>
           </article>
           <article>
             <strong>Size chart jelas</strong>
-            <span>EU, US, UK, dan panjang kaki dalam cm.</span>
+            <span>Lebar dada, panjang badan, dan panjang lengan.</span>
           </article>
           <article>
             <strong>Checkout ringkas</strong>
@@ -80,7 +80,7 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Katalog</p>
-              <h2>Pilih sepatu casual favoritmu</h2>
+              <h2>Pilih jaket TroubleMaker favoritmu</h2>
             </div>
             <button class="secondary-button" id="reset-filters" type="button">Reset Filter</button>
           </div>
@@ -94,36 +94,32 @@
               Kategori
               <select id="category-filter">
                 <option value="all">Semua</option>
-                <option value="Sneakers">Sneakers</option>
-                <option value="Slip-on">Slip-on</option>
-                <option value="Canvas">Canvas</option>
-                <option value="Loafers">Loafers</option>
-                <option value="Sandal Casual">Sandal Casual</option>
+                <option value="Bomber">Bomber</option>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Denim Jacket">Denim Jacket</option>
+                <option value="Varsity">Varsity</option>
+                <option value="Windbreaker">Windbreaker</option>
               </select>
             </label>
             <label>
               Ukuran
               <select id="size-filter">
                 <option value="all">Semua</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
               </select>
             </label>
             <label>
               Warna
               <select id="color-filter">
                 <option value="all">Semua</option>
-                <option value="Putih">Putih</option>
                 <option value="Hitam">Hitam</option>
                 <option value="Navy">Navy</option>
-                <option value="Tan">Tan</option>
+                <option value="Maroon">Maroon</option>
+                <option value="Olive">Olive</option>
                 <option value="Abu">Abu</option>
               </select>
             </label>
@@ -131,9 +127,9 @@
               Harga
               <select id="price-filter">
                 <option value="all">Semua</option>
-                <option value="0-300000">Di bawah Rp300rb</option>
-                <option value="300000-500000">Rp300rb - Rp500rb</option>
-                <option value="500000-900000">Rp500rb - Rp900rb</option>
+                <option value="0-350000">Di bawah Rp350rb</option>
+                <option value="350000-600000">Rp350rb - Rp600rb</option>
+                <option value="600000-1000000">Rp600rb - Rp1jt</option>
               </select>
             </label>
             <label>
@@ -151,7 +147,7 @@
 
           <div class="result-bar">
             <span id="result-count">0 produk</span>
-            <span id="active-filter-copy">Semua produk casual</span>
+            <span id="active-filter-copy">Semua jaket TroubleMaker</span>
           </div>
 
           <div class="product-grid" id="product-grid"></div>
@@ -167,23 +163,19 @@
           <div>
             <p class="eyebrow">Panduan Ukuran</p>
             <h2>Kurangi risiko salah ukuran sebelum checkout</h2>
-            <p>Ukur panjang kaki dari tumit sampai ujung jari terpanjang, lalu cocokkan dengan tabel berikut. Jika kaki lebar, pilih produk dengan catatan wide fit atau naik satu ukuran.</p>
+            <p>Ukur jaket favorit yang paling nyaman, lalu cocokkan lebar dada, panjang badan, dan panjang lengan dengan tabel berikut.</p>
           </div>
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>EU</th><th>US</th><th>UK</th><th>Panjang Kaki</th></tr>
+                <tr><th>Ukuran</th><th>Lebar Dada</th><th>Panjang Badan</th><th>Panjang Lengan</th></tr>
               </thead>
               <tbody>
-                <tr><td>36</td><td>5</td><td>3.5</td><td>22.5 cm</td></tr>
-                <tr><td>37</td><td>6</td><td>4.5</td><td>23.5 cm</td></tr>
-                <tr><td>38</td><td>7</td><td>5.5</td><td>24 cm</td></tr>
-                <tr><td>39</td><td>7.5</td><td>6</td><td>25 cm</td></tr>
-                <tr><td>40</td><td>8</td><td>6.5</td><td>25.5 cm</td></tr>
-                <tr><td>41</td><td>9</td><td>7.5</td><td>26.5 cm</td></tr>
-                <tr><td>42</td><td>10</td><td>8.5</td><td>27 cm</td></tr>
-                <tr><td>43</td><td>11</td><td>9.5</td><td>28 cm</td></tr>
-                <tr><td>44</td><td>12</td><td>10.5</td><td>29 cm</td></tr>
+                <tr><td>S</td><td>54 cm</td><td>66 cm</td><td>60 cm</td></tr>
+                <tr><td>M</td><td>57 cm</td><td>69 cm</td><td>62 cm</td></tr>
+                <tr><td>L</td><td>60 cm</td><td>72 cm</td><td>64 cm</td></tr>
+                <tr><td>XL</td><td>63 cm</td><td>75 cm</td><td>66 cm</td></tr>
+                <tr><td>XXL</td><td>66 cm</td><td>78 cm</td><td>68 cm</td></tr>
               </tbody>
             </table>
           </div>
@@ -229,7 +221,7 @@
                   <option value="Transfer Manual">Transfer Manual</option>
                 </select>
               </label>
-              <label>Voucher<input id="voucher-input" placeholder="CASUAL10 / FREESHIP" /></label>
+              <label>Voucher<input id="voucher-input" placeholder="TM10 / FREESHIP" /></label>
               <button class="primary-button full" type="submit">Buat Pesanan</button>
             </form>
             <div class="order-created" id="order-created" hidden></div>
@@ -258,11 +250,11 @@
           </article>
           <article>
             <h3>Ulasan pembeli</h3>
-            <p>Rating mencakup kenyamanan, kualitas bahan, dan kesesuaian ukuran agar pembeli berikutnya lebih yakin.</p>
+            <p>Rating mencakup kenyamanan bahan, ketebalan, jahitan, dan kesesuaian ukuran agar pembeli berikutnya lebih yakin.</p>
           </article>
           <article>
             <h3>Customer service</h3>
-            <p>Email cs@casualstep.test atau WhatsApp 08-1234-5678 pada jam operasional 09.00-18.00.</p>
+            <p>Email cs@troublemaker.test atau WhatsApp 08-1234-5678 pada jam operasional 09.00-18.00.</p>
           </article>
         </div>
       </section>
@@ -296,10 +288,16 @@
       <div class="modal-card small" role="dialog" aria-modal="true" aria-labelledby="login-title">
         <button class="close-button" id="login-close" type="button">Tutup</button>
         <h2 id="login-title">Login Customer</h2>
+        <p class="form-note">Masuk dengan akun yang sudah dibuat atau daftar akun baru untuk checkout lebih rapi.</p>
         <form id="login-form" class="stack-form">
+          <label>Nama<input id="login-name" placeholder="Nama lengkap" /></label>
           <label>Email<input id="login-email" type="email" required placeholder="email@domain.com" /></label>
           <label>Password<input id="login-password" type="password" required placeholder="Minimal 6 karakter" /></label>
-          <button class="primary-button full" type="submit">Masuk</button>
+          <div class="modal-actions compact-actions">
+            <button class="primary-button full" type="submit" data-auth-action="login">Masuk</button>
+            <button class="secondary-button full" type="submit" data-auth-action="register">Register</button>
+          </div>
+          <button class="secondary-button full" id="logout-btn" type="button" hidden>Logout</button>
         </form>
       </div>
     </div>
@@ -309,8 +307,8 @@
     <footer class="site-footer">
       <div class="shell footer-layout">
         <div>
-          <a class="brand" href="#home"><span class="brand-mark">CS</span><span>CasualStep</span></a>
-          <p>Toko online sepatu casual dengan pengalaman belanja yang jelas dari ukuran sampai pengiriman.</p>
+          <a class="brand" href="#home"><span class="brand-mark">TM</span><span>TroubleMaker</span></a>
+          <p>Toko online jaket streetwear dengan pengalaman belanja yang jelas dari ukuran sampai pengiriman.</p>
         </div>
         <div>
           <h3>Belanja</h3>

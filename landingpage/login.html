@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login customer Troublemaker untuk dashboard, wishlist, cart, checkout, dan riwayat pesanan." />
+    <meta name="theme-color" content="#0f1014" />
+    <title>Login | Troublemaker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page login-page">
+    <main class="auth-screen auth-screen-premium">
+      <section class="auth-visual" aria-label="Troublemaker customer access">
+        <a class="brand auth-brand" href="index.html"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span class="brand-name">Troublemaker</span></a>
+        <div class="auth-visual-copy">
+          <p class="eyebrow">Member workspace</p>
+          <h1>Dashboard belanja yang dibuat tenang, cepat, dan premium.</h1>
+          <p>Masuk untuk melanjutkan checkout, memantau pesanan, dan menyimpan jaket pilihan dalam pengalaman yang lebih rapi.</p>
+          <div class="auth-proof-grid" aria-label="Keunggulan akun Troublemaker">
+            <span><strong>24/7</strong> akses toko</span>
+            <span><strong>Secure</strong> local account</span>
+            <span><strong>Fast</strong> checkout flow</span>
+          </div>
+        </div>
+        <div class="auth-ambient-card" aria-hidden="true">
+          <span>TM</span>
+          <strong>Official Jacket Store</strong>
+          <small>Streetwear catalog dashboard</small>
+        </div>
+      </section>
+
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <div class="auth-card-premium">
+          <div class="auth-card-topbar">
+            <a class="back-link" href="index.html">Kembali</a>
+            <span class="auth-secure-pill">Private access</span>
+          </div>
+          <div class="auth-heading-block">
+            <p class="eyebrow">Login</p>
+            <h2 id="auth-title">Selamat datang kembali</h2>
+            <p class="form-note">Akses dashboard customer TroubleMaker untuk cart, wishlist, checkout, dan riwayat pesanan.</p>
+          </div>
+
+          <form id="standalone-login-form" class="stack-form auth-form auth-form-premium">
+            <label class="auth-field">Email
+              <span class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">@</span><input id="standalone-login-email" type="email" autocomplete="email" required placeholder="nama@email.com" /></span>
+            </label>
+            <label class="auth-field">Password
+              <span class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">*</span><input id="standalone-login-password" type="password" autocomplete="current-password" required placeholder="Minimal 6 karakter" /></span>
+            </label>
+            <div class="auth-options-row">
+              <label class="auth-check"><input type="checkbox" /> <span>Ingat saya</span></label>
+              <a href="register.html">Buat akun</a>
+            </div>
+            <button class="primary-button full auth-submit" type="submit">Masuk ke Dashboard</button>
+          </form>
+
+          <div class="auth-divider"><span>atau</span></div>
+          <p class="auth-switch">Belum punya akun? <a href="register.html">Daftar customer baru</a></p>
+        </div>
+      </section>
+    </main>
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

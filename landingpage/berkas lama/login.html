@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login customer Troublemaker untuk dashboard, wishlist, cart, checkout, dan riwayat pesanan." />
+    <meta name="theme-color" content="#0f1014" />
+    <title>Login | Troublemaker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page login-page">
+    <main class="auth-screen">
+      <section class="auth-visual" aria-label="Troublemaker customer access">
+        <a class="brand auth-brand" href="index.html"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span class="brand-name">Troublemaker</span></a>
+        <div class="auth-visual-copy">
+          <p class="eyebrow">Customer access</p>
+          <h1>Masuk ke dashboard Troublemaker.</h1>
+          <p>Kelola profil, wishlist, keranjang, checkout, dan riwayat pesanan jaket resmi dalam satu tempat.</p>
+        </div>
+      </section>
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <a class="back-link" href="index.html">Kembali ke toko</a>
+        <p class="eyebrow">Login</p>
+        <h2 id="auth-title">Selamat datang kembali</h2>
+        <p class="form-note">Gunakan akun yang sudah dibuat melalui halaman register.</p>
+        <form id="standalone-login-form" class="stack-form auth-form">
+          <label>Email<input id="standalone-login-email" type="email" autocomplete="email" required placeholder="email@domain.com" /></label>
+          <label>Password<input id="standalone-login-password" type="password" autocomplete="current-password" required placeholder="Minimal 6 karakter" /></label>
+          <button class="primary-button full" type="submit">Login</button>
+        </form>
+        <p class="auth-switch">Belum punya akun? <a href="register.html">Register</a></p>
+      </section>
+    </main>
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

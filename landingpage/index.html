@@ -3,137 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CasualStep, toko online sepatu casual dengan katalog, filter ukuran, wishlist, cart, checkout, dan pelacakan pesanan." />
-    <meta name="theme-color" content="#18212f" />
-    <title>CasualStep | Toko Online Sepatu Casual</title>
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Troublemaker adalah toko online jaket streetwear premium dengan katalog resmi, wishlist, keranjang, checkout, dan dashboard customer." />
+    <meta name="keywords" content="Troublemaker, jaket Troublemaker, jaket streetwear, toko jaket online, fashion lokal" />
+    <meta name="theme-color" content="#0f1014" />
+    <meta property="og:title" content="Troublemaker | Official Jacket Store" />
+    <meta property="og:description" content="Belanja jaket Troublemaker resmi dengan pengalaman toko online modern." />
+    <meta property="og:type" content="website" />
+    <title>Troublemaker | Official Jacket Store</title>
+    <link rel="stylesheet" href="styles.css?v=luxury-smoke-1" />
   </head>
   <body>
-    <a class="skip-link" href="#catalog">Lewati ke katalog</a>
+    <a class="skip-link" href="#produk">Lewati ke produk</a>
 
-    <header class="site-header">
+    <header class="site-header" id="top">
       <div class="shell nav-shell">
-        <a class="brand" href="#home" aria-label="CasualStep Home">
-          <span class="brand-mark">CS</span>
-          <span>CasualStep</span>
+        <a class="brand" href="#home" aria-label="Troublemaker Home">
+          <span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span>
+          <span class="brand-name">Troublemaker</span>
         </a>
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Buka navigasi">Menu</button>
+
         <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
-          <a href="#catalog">Produk</a>
-          <a href="#size-guide">Size Chart</a>
-          <a href="#checkout">Checkout</a>
-          <a href="#orders">Pesanan</a>
-          <a href="admin.html">Admin</a>
+          <a href="#home">Home</a>
+          <a href="#produk">Produk</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#kontak">Kontak</a>
+          <a class="admin-nav-link" href="admin.html">Admin</a>
+          <a class="nav-link" id="login-btn" href="login.html">Login</a>
+          <button class="cart-nav" id="cart-jump" type="button">Keranjang <span id="cart-count">0</span></button>
         </nav>
-        <div class="header-actions">
-          <button class="icon-button" id="login-btn" type="button">Login</button>
-          <button class="icon-button" id="wishlist-jump" type="button">Wishlist <span id="wishlist-count">0</span></button>
-          <button class="cart-button" id="cart-jump" type="button">Cart <span id="cart-count">0</span></button>
-        </div>
       </div>
     </header>
 
-    <main id="home">
-      <section class="hero">
-        <div class="shell hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow">Sneakers, slip-on, canvas, loafers</p>
-            <h1>Temukan sepatu casual yang pas di kaki dan pas di gaya.</h1>
-            <p>Belanja sepatu dengan filter ukuran, stok per warna, size chart, wishlist, checkout cepat, dan status pesanan yang jelas.</p>
-            <form class="hero-search" id="hero-search-form">
-              <label class="sr-only" for="hero-search-input">Cari sepatu</label>
-              <input id="hero-search-input" type="search" placeholder="Cari sneakers putih, canvas hitam, loafers kerja..." />
-              <button class="primary-button" type="submit">Cari</button>
-            </form>
-            <div class="hero-metrics" aria-label="Ringkasan toko">
-              <span><strong>36-45</strong> ukuran</span>
-              <span><strong>24 jam</strong> proses</span>
-              <span><strong>7 hari</strong> retur</span>
+    <main>
+      <section class="hero" id="home">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Official jacket store</p>
+            <h1>Outerwear Troublemaker untuk karakter yang tidak ikut arus.</h1>
+            <p class="hero-lead">Tampilan baru yang lebih premium, cepat, dan responsif. Katalog disiapkan hanya untuk produk jaket Troublemaker resmi dari asset brand kamu.</p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#produk">Belanja Sekarang</a>
+              <a class="secondary-button" href="#tentang">Lihat Brand</a>
+            </div>
+            <div class="hero-proof" aria-label="Keunggulan toko">
+              <span><strong>Official</strong> produk brand</span>
+              <span><strong>Secure</strong> checkout demo</span>
+              <span><strong>Fast</strong> responsive UI</span>
             </div>
           </div>
-          <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80" alt="Sepasang sepatu sneakers casual merah di latar terang" />
+
+          <div class="hero-stage reveal" aria-label="Visual produk resmi Troublemaker">
+            <div class="hero-product-frame">
+              <img id="hero-product-image" src="assets/hero-orang.jpeg" alt="Model memakai jaket Troublemaker hitam dengan hood dan kacamata" />
+              <div class="hero-product-empty" id="hero-product-empty" hidden>
+                <span>TM</span>
+                <strong>Foto jaket resmi akan tampil di sini</strong>
+                <small>Tambahkan produk asli melalui dashboard admin.</small>
+              </div>
+            </div>
+            <div class="stage-note stage-note-top">Official drop</div>
+            <div class="stage-note stage-note-bottom">Streetwear jacket</div>
           </div>
         </div>
       </section>
 
-      <section class="quick-panel" aria-label="Keunggulan CasualStep">
-        <div class="shell quick-grid">
+      <section class="section intro-band" aria-label="Nilai brand">
+        <div class="shell feature-strip">
           <article>
-            <strong>Stok per varian</strong>
-            <span>Ukuran dan warna tervalidasi sebelum checkout.</span>
+            <span>01</span>
+            <strong>Brand-first</strong>
+            <p>Identitas Troublemaker dibuat dominan tanpa mengubah nama, tone, atau arah fashion brand.</p>
           </article>
           <article>
-            <strong>Size chart jelas</strong>
-            <span>EU, US, UK, dan panjang kaki dalam cm.</span>
+            <span>02</span>
+            <strong>Original catalog</strong>
+            <p>Produk hanya ditampilkan dari data resmi yang kamu masukkan, bukan gambar contoh atau dummy.</p>
           </article>
           <article>
-            <strong>Checkout ringkas</strong>
-            <span>Alamat, kurir, voucher, dan pembayaran dalam satu alur.</span>
+            <span>03</span>
+            <strong>Mobile ready</strong>
+            <p>Layout, cart, checkout, dan dashboard customer disiapkan nyaman dipakai di layar kecil.</p>
           </article>
         </div>
       </section>
 
-      <section class="section" id="catalog">
+      <section class="section" id="produk">
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Katalog</p>
-              <h2>Pilih sepatu casual favoritmu</h2>
+              <p class="eyebrow">Produk</p>
+              <h2>Katalog jaket resmi Troublemaker</h2>
             </div>
             <button class="secondary-button" id="reset-filters" type="button">Reset Filter</button>
           </div>
 
           <div class="catalog-tools" aria-label="Filter produk">
             <label>
-              Search
-              <input id="search-input" type="search" placeholder="Nama, brand, warna, SKU" />
+              Cari produk
+              <input id="search-input" type="search" placeholder="Nama jaket, warna, kategori" />
+            </label>
+            <label>
+              Brand
+              <select id="brand-filter">
+                <option value="all">Semua</option>
+                <option value="Troublemaker">Troublemaker</option>
+                <option value="Stone Island">Stone Island</option>
+              </select>
             </label>
             <label>
               Kategori
               <select id="category-filter">
                 <option value="all">Semua</option>
-                <option value="Sneakers">Sneakers</option>
-                <option value="Slip-on">Slip-on</option>
-                <option value="Canvas">Canvas</option>
-                <option value="Loafers">Loafers</option>
-                <option value="Sandal Casual">Sandal Casual</option>
+                <option value="Bomber">Bomber</option>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Denim Jacket">Denim Jacket</option>
+                <option value="Varsity">Varsity</option>
+                <option value="Windbreaker">Windbreaker</option>
+                <option value="Coach Jacket">Coach Jacket</option>
               </select>
             </label>
             <label>
               Ukuran
               <select id="size-filter">
                 <option value="all">Semua</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-              </select>
-            </label>
-            <label>
-              Warna
-              <select id="color-filter">
-                <option value="all">Semua</option>
-                <option value="Putih">Putih</option>
-                <option value="Hitam">Hitam</option>
-                <option value="Navy">Navy</option>
-                <option value="Tan">Tan</option>
-                <option value="Abu">Abu</option>
-              </select>
-            </label>
-            <label>
-              Harga
-              <select id="price-filter">
-                <option value="all">Semua</option>
-                <option value="0-300000">Di bawah Rp300rb</option>
-                <option value="300000-500000">Rp300rb - Rp500rb</option>
-                <option value="500000-900000">Rp500rb - Rp900rb</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
               </select>
             </label>
             <label>
@@ -143,77 +142,151 @@
                 <option value="newest">Terbaru</option>
                 <option value="lowest">Harga terendah</option>
                 <option value="highest">Harga tertinggi</option>
-                <option value="rating">Rating tertinggi</option>
-                <option value="discount">Diskon terbesar</option>
               </select>
             </label>
           </div>
 
           <div class="result-bar">
             <span id="result-count">0 produk</span>
-            <span id="active-filter-copy">Semua produk casual</span>
+            <span id="active-filter-copy">Menunggu katalog resmi</span>
           </div>
 
           <div class="product-grid" id="product-grid"></div>
-          <div class="empty-state" id="empty-state" hidden>
-            <h3>Produk tidak ditemukan</h3>
-            <p>Coba ubah keyword, ukuran, warna, atau rentang harga.</p>
+          <div class="empty-state catalog-empty" id="empty-state" hidden>
+            <p class="eyebrow">Official catalog</p>
+            <h3>Produk resmi belum ditambahkan</h3>
+            <p>Masukkan foto, nama, harga, kategori, warna, ukuran, dan stok jaket Troublemaker resmi melalui data produk atau dashboard admin. Halaman ini sengaja tidak memakai produk contoh.</p>
+            <a class="primary-button" href="admin.html">Tambah Produk Resmi</a>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="size-guide">
-        <div class="shell size-layout">
+
+      <section class="section section-dark" id="tentang">
+        <div class="shell about-grid">
           <div>
-            <p class="eyebrow">Panduan Ukuran</p>
-            <h2>Kurangi risiko salah ukuran sebelum checkout</h2>
-            <p>Ukur panjang kaki dari tumit sampai ujung jari terpanjang, lalu cocokkan dengan tabel berikut. Jika kaki lebar, pilih produk dengan catatan wide fit atau naik satu ukuran.</p>
+            <p class="eyebrow">Tentang Kami</p>
+            <h2>Troublemaker dibuat untuk gaya streetwear yang tegas, bersih, dan percaya diri.</h2>
           </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>EU</th><th>US</th><th>UK</th><th>Panjang Kaki</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>36</td><td>5</td><td>3.5</td><td>22.5 cm</td></tr>
-                <tr><td>37</td><td>6</td><td>4.5</td><td>23.5 cm</td></tr>
-                <tr><td>38</td><td>7</td><td>5.5</td><td>24 cm</td></tr>
-                <tr><td>39</td><td>7.5</td><td>6</td><td>25 cm</td></tr>
-                <tr><td>40</td><td>8</td><td>6.5</td><td>25.5 cm</td></tr>
-                <tr><td>41</td><td>9</td><td>7.5</td><td>26.5 cm</td></tr>
-                <tr><td>42</td><td>10</td><td>8.5</td><td>27 cm</td></tr>
-                <tr><td>43</td><td>11</td><td>9.5</td><td>28 cm</td></tr>
-                <tr><td>44</td><td>12</td><td>10.5</td><td>29 cm</td></tr>
-              </tbody>
-            </table>
+          <div class="about-copy">
+            <p>Website ini difokuskan menjadi toko online profesional untuk brand Troublemaker: navigasi ringkas, katalog resmi, pengalaman belanja cepat, dan dashboard customer sederhana.</p>
+            <div class="about-stats">
+              <span><strong>100%</strong> brand identity</span>
+              <span><strong>0</strong> dummy catalog</span>
+              <span><strong>24/7</strong> storefront</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="checkout">
+      <section class="section" id="account-dashboard" hidden>
+        <div class="shell dashboard-grid">
+          <aside class="profile-card">
+            <p class="eyebrow">Dashboard</p>
+            <h2 id="dashboard-name">Customer</h2>
+            <p id="dashboard-email">-</p>
+            <button class="secondary-button" id="dashboard-logout" type="button">Logout</button>
+          </aside>
+          <div>
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Akun Saya</p>
+                <h2>Riwayat pesanan</h2>
+              </div>
+            </div>
+            <div class="orders-grid" id="orders-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="keranjang">
         <div class="shell checkout-layout">
           <div>
-            <p class="eyebrow">Checkout</p>
-            <h2>Cart dan pengiriman</h2>
+            <div class="cart-section-header">
+              <span class="checkout-icon" aria-hidden="true">🛍️</span>
+              <div>
+                <p class="eyebrow">Keranjang</p>
+                <h2>Shopping cart & wishlist</h2>
+                <p>Review produk, warna, ukuran, jumlah, dan harga sebelum melanjutkan pembayaran.</p>
+              </div>
+            </div>
             <div class="cart-list" id="cart-list"></div>
-            <div class="wishlist-panel" id="wishlist-panel">
-              <h3>Wishlist</h3>
+            <div class="wishlist-panel">
+              <div class="panel-heading">
+                <h3>Wishlist</h3>
+                <span id="wishlist-count">0</span>
+              </div>
               <div id="wishlist-list" class="wishlist-list"></div>
             </div>
           </div>
 
-          <aside class="checkout-box" aria-label="Form checkout">
-            <h3>Ringkasan Pesanan</h3>
-            <div class="summary-line"><span>Subtotal</span><strong id="subtotal-copy">Rp 0</strong></div>
-            <div class="summary-line"><span>Diskon</span><strong id="discount-copy">Rp 0</strong></div>
-            <div class="summary-line"><span>Ongkir</span><strong id="shipping-copy">Rp 0</strong></div>
-            <div class="summary-line total"><span>Total</span><strong id="grand-total-copy">Rp 0</strong></div>
+          <aside class="checkout-box" id="checkout" aria-label="Form checkout">
+            <div class="checkout-box-header">
+              <span class="checkout-icon" aria-hidden="true">🛒</span>
+              <div>
+                <p class="eyebrow">Checkout Aman</p>
+                <h3>Ringkasan Pesanan</h3>
+              </div>
+            </div>
 
-            <form id="checkout-form" class="stack-form">
-              <label>Nama penerima<input id="recipient-name" required placeholder="Nama lengkap" /></label>
-              <label>No. HP<input id="recipient-phone" required placeholder="08xxxxxxxxxx" /></label>
-              <label>Email<input id="recipient-email" type="email" required placeholder="email@domain.com" /></label>
-              <label>Alamat lengkap<textarea id="recipient-address" rows="3" required placeholder="Jalan, nomor rumah, kecamatan, kota, kode pos"></textarea></label>
+            <div class="summary-card checkout-summary-pro" aria-label="Ringkasan pembayaran">
+              <div class="summary-hero">
+                <div>
+                  <span>Total pembayaran</span>
+                  <strong id="grand-total-copy">Rp 0</strong>
+                </div>
+                <small id="summary-status">Keranjang kosong</small>
+              </div>
+              <div class="summary-overview">
+                <div>
+                  <span>Total item</span>
+                  <strong id="summary-item-count">0 item</strong>
+                </div>
+                <div>
+                  <span>Kurir</span>
+                  <strong id="summary-courier">Reguler</strong>
+                </div>
+              </div>
+              <div class="summary-breakdown">
+                <div class="summary-line"><span><span aria-hidden="true">🧾</span> Subtotal</span><strong id="subtotal-copy">Rp 0</strong></div>
+                <div class="summary-line"><span><span aria-hidden="true">🏷️</span> Diskon</span><strong id="discount-copy">Rp 0</strong></div>
+                <div class="summary-line"><span><span aria-hidden="true">🚚</span> Ongkos kirim</span><strong id="shipping-copy">Rp 0</strong></div>
+              </div>
+              <div class="summary-mini-grid" aria-label="Detail checkout">
+                <div><span>Pembayaran</span><strong id="summary-payment">QRIS</strong></div>
+                <div><span>Voucher</span><strong id="summary-voucher">Tidak ada</strong></div>
+              </div>
+            </div>
+
+            <form id="checkout-form" class="stack-form modern-checkout-form">
+              <div class="form-section-title address-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-address.svg" alt="" /></span><strong>Alamat Pengiriman Resmi</strong></div>
+              <div class="address-card" aria-label="Detail alamat pengiriman">
+                <div class="address-grid two">
+                  <label>Nama penerima<input id="recipient-name" required placeholder="Nama lengkap penerima" /></label>
+                  <label>No. HP aktif<input id="recipient-phone" required placeholder="08xxxxxxxxxx" /></label>
+                </div>
+                <label>Email<input id="recipient-email" type="email" required placeholder="email@domain.com" /></label>
+                <div class="address-grid two">
+                  <label>Label alamat
+                    <select id="recipient-label" required>
+                      <option value="Rumah">Rumah</option>
+                      <option value="Kantor">Kantor</option>
+                      <option value="Apartemen">Apartemen</option>
+                      <option value="Kost">Kost</option>
+                    </select>
+                  </label>
+                  <label>Kode pos<input id="recipient-postal" required inputmode="numeric" placeholder="Contoh: 40123" /></label>
+                </div>
+                <div class="address-grid three">
+                  <label>Provinsi<input id="recipient-province" required placeholder="Provinsi" /></label>
+                  <label>Kota/Kabupaten<input id="recipient-city" required placeholder="Kota atau kabupaten" /></label>
+                  <label>Kecamatan<input id="recipient-district" required placeholder="Kecamatan" /></label>
+                </div>
+                <label>Alamat lengkap<textarea id="recipient-address" rows="3" required placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan/desa"></textarea></label>
+                <label>Patokan / catatan kurir<textarea id="recipient-note" rows="2" placeholder="Contoh: pagar hitam, dekat minimarket"></textarea></label>
+              </div>
+
+              <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-delivery.png" alt="" /></span><strong>Pengiriman</strong></div>
               <label>Kurir
                 <select id="courier-select" required>
                   <option value="Reguler|18000">Reguler - Rp18.000</option>
@@ -221,6 +294,8 @@
                   <option value="Same Day|45000">Same Day - Rp45.000</option>
                 </select>
               </label>
+
+              <div class="form-section-title"><span class="form-image-icon" aria-hidden="true"><img src="assets/icon-payment.png" alt="" /></span><strong>Metode Pembayaran</strong></div>
               <label>Pembayaran
                 <select id="payment-select" required>
                   <option value="QRIS">QRIS</option>
@@ -229,47 +304,32 @@
                   <option value="Transfer Manual">Transfer Manual</option>
                 </select>
               </label>
-              <label>Voucher<input id="voucher-input" placeholder="CASUAL10 / FREESHIP" /></label>
-              <button class="primary-button full" type="submit">Buat Pesanan</button>
+              <label>Voucher<input id="voucher-input" placeholder="TM10 / FREESHIP" /></label>
+              <button class="primary-button full checkout-submit" type="submit">Bayar Sekarang</button>
             </form>
             <div class="order-created" id="order-created" hidden></div>
           </aside>
         </div>
       </section>
 
-      <section class="section section-soft" id="orders">
-        <div class="shell">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Status Pesanan</p>
-              <h2>Riwayat dan pelacakan</h2>
-            </div>
-            <button class="secondary-button" id="clear-orders" type="button">Bersihkan Riwayat</button>
+      <section class="section" id="kontak">
+        <div class="shell contact-grid">
+          <div>
+            <p class="eyebrow">Kontak</p>
+            <h2>Hubungi Troublemaker</h2>
+            <p>Gunakan kontak resmi brand untuk konfirmasi produk, ukuran, ketersediaan stok, atau kerja sama.</p>
           </div>
-          <div class="orders-grid" id="orders-grid"></div>
-        </div>
-      </section>
-
-      <section class="section" id="help">
-        <div class="shell help-grid">
-          <article>
-            <h3>Retur 7 hari</h3>
-            <p>Ajukan retur untuk salah ukuran, produk cacat, atau produk salah kirim maksimal 7 hari setelah diterima.</p>
-          </article>
-          <article>
-            <h3>Ulasan pembeli</h3>
-            <p>Rating mencakup kenyamanan, kualitas bahan, dan kesesuaian ukuran agar pembeli berikutnya lebih yakin.</p>
-          </article>
-          <article>
-            <h3>Customer service</h3>
-            <p>Email cs@casualstep.test atau WhatsApp 08-1234-5678 pada jam operasional 09.00-18.00.</p>
-          </article>
+          <div class="contact-card">
+            <a href="mailto:cs@troublemaker.test">cs@troublemaker.test</a>
+            <a href="https://wa.me/62812345678">WhatsApp 08-1234-5678</a>
+            <span>Jam operasional 09.00-18.00</span>
+          </div>
         </div>
       </section>
     </main>
 
     <div class="modal" id="product-modal" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card product-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <button class="close-button" id="modal-close" type="button">Tutup</button>
         <div class="modal-layout">
           <img id="modal-image" src="" alt="" />
@@ -283,7 +343,7 @@
             <label>Ukuran<select id="modal-size"></select></label>
             <p class="stock-copy" id="modal-stock"></p>
             <div class="modal-actions">
-              <button class="primary-button" id="modal-add-cart" type="button">Tambah ke Cart</button>
+              <button class="primary-button" id="modal-add-cart" type="button">Tambah ke Keranjang</button>
               <button class="secondary-button" id="modal-wishlist" type="button">Wishlist</button>
             </div>
             <div class="spec-list" id="modal-specs"></div>
@@ -293,13 +353,20 @@
     </div>
 
     <div class="modal" id="login-modal" aria-hidden="true">
-      <div class="modal-card small" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="modal-card auth-card" role="dialog" aria-modal="true" aria-labelledby="login-title">
         <button class="close-button" id="login-close" type="button">Tutup</button>
-        <h2 id="login-title">Login Customer</h2>
+        <p class="eyebrow">Customer access</p>
+        <h2 id="login-title">Login / Register</h2>
+        <p class="form-note">Masuk untuk melihat dashboard, mengisi checkout lebih cepat, dan menyimpan riwayat pesanan.</p>
         <form id="login-form" class="stack-form">
+          <label>Nama<input id="login-name" placeholder="Diisi saat register" /></label>
           <label>Email<input id="login-email" type="email" required placeholder="email@domain.com" /></label>
           <label>Password<input id="login-password" type="password" required placeholder="Minimal 6 karakter" /></label>
-          <button class="primary-button full" type="submit">Masuk</button>
+          <div class="modal-actions compact-actions">
+            <button class="primary-button full" type="submit" data-auth-action="login">Login</button>
+            <button class="secondary-button full" type="submit" data-auth-action="register">Register</button>
+          </div>
+          <button class="ghost-button full" id="logout-btn" type="button" hidden>Logout</button>
         </form>
       </div>
     </div>
@@ -309,24 +376,24 @@
     <footer class="site-footer">
       <div class="shell footer-layout">
         <div>
-          <a class="brand" href="#home"><span class="brand-mark">CS</span><span>CasualStep</span></a>
-          <p>Toko online sepatu casual dengan pengalaman belanja yang jelas dari ukuran sampai pengiriman.</p>
+          <a class="brand" href="#home"><span class="brand-mark"><img src="assets/brand-logo.jpeg" alt="Logo Troublemaker" /></span><span>Troublemaker</span></a>
+          <p>Official jacket store experience for Troublemaker.</p>
         </div>
         <div>
-          <h3>Belanja</h3>
-          <a href="#catalog">Katalog</a>
-          <a href="#size-guide">Size Chart</a>
-          <a href="#checkout">Checkout</a>
+          <h3>Navigasi</h3>
+          <a href="#produk">Produk</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#kontak">Kontak</a>
         </div>
         <div>
-          <h3>Bantuan</h3>
-          <a href="#orders">Status Pesanan</a>
-          <a href="#help">Retur</a>
+          <h3>Akun</h3>
+          <a class="footer-button" id="footer-login" href="login.html">Login</a>
+          <a href="#keranjang">Keranjang</a>
           <a href="admin.html">Admin</a>
         </div>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=luxury-smoke-1"></script>
   </body>
 </html>
