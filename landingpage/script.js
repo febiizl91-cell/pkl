@@ -292,6 +292,28 @@ function read(key, fallback) {
 }
 function write(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
 function clone(value) { return JSON.parse(JSON.stringify(value)); }
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+function safeImageUrl(value) {
+  const url = String(value || "").trim();
+  if (!url) return "";
+  if (/^data:image\/(?:png|jpe?g|webp);base64,[a-z0-9+/=\s]+$/i.test(url)) return url;
+  if (/^assets\/[a-z0-9/_ .-]+\.(?:png|jpe?g|webp|gif|svg)$/i.test(url)) return url;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === "https:") return parsed.href;
+  } catch {
+    return "";
+  }
+  return "";
+}
 
 function loadProducts() {
   const stored = read(STORE_KEYS.products, null);
@@ -326,7 +348,7 @@ function toast(message) {
 function colorValue(color) {
   return { Hitam: '#101014', Navy: '#172554', Maroon: '#7f1d1d', Olive: '#4d5b37', Abu: '#8d949e', Putih: '#d8d8d2', Pink: '#f4a9bc', Cream: '#e6dac8' }[color] || '#d7dde8';
 }
-function hasOfficialImage(product) { return Boolean(product.image && !String(product.image).includes('images.unsplash.com')); }
+function hasOfficialImage(product) { return Boolean(safeImageUrl(product?.image) && !String(product.image).includes('images.unsplash.com')); }
 
 function renderProducts() {
   if (!els.productGrid) return;
@@ -383,21 +405,26 @@ function syncHeroProduct() {
 function productCard(product) {
   const finalPrice = salePrice(product);
   const isWish = wishlist.includes(product.id);
-  const image = hasOfficialImage(product) ? `<img src="${product.image}" alt="${product.name}" loading="lazy">` : `<div class="official-image-missing"><span>Official image required</span></div>`;
+  const imageUrl = safeImageUrl(product.image);
+  const productId = escapeHtml(product.id);
+  const productName = escapeHtml(product.name);
+  const productBrand = escapeHtml(product.brand || 'Troublemaker');
+  const productCategory = escapeHtml(product.category || 'Jacket');
+  const image = hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${productName}" loading="lazy">` : `<div class="official-image-missing"><span>Official image required</span></div>`;
   return `<article class="product-card reveal">
     <div class="product-image">
       ${image}
-      <div class="product-badges">${product.discount ? `<span class="badge">-${product.discount}%</span>` : ''}<span class="badge soft">Official</span></div>
+      <div class="product-badges">${product.discount ? `<span class="badge">-${Number(product.discount)}%</span>` : ''}<span class="badge soft">Official</span></div>
     </div>
     <div class="product-body">
       <div class="product-title-row">
-        <div><h3>${product.name}</h3><span class="product-brand">${product.brand || 'Troublemaker'} / ${product.category || 'Jacket'}</span></div>
-        <button class="small-button icon-only" data-wishlist="${product.id}" type="button" aria-label="Wishlist ${product.name}">${isWish ? 'Saved' : 'Wish'}</button>
+        <div><h3>${productName}</h3><span class="product-brand">${productBrand} / ${productCategory}</span></div>
+        <button class="small-button icon-only" data-wishlist="${productId}" type="button" aria-label="Wishlist ${productName}">${isWish ? 'Saved' : 'Wish'}</button>
       </div>
-      <p>${product.description || 'Produk resmi Troublemaker.'}</p>
+      <p>${escapeHtml(product.description || 'Produk resmi Troublemaker.')}</p>
       <div class="price-row"><strong>${money.format(finalPrice)}</strong>${product.discount ? `<del>${money.format(product.price)}</del>` : ''}</div>
-      <div class="swatches">${(product.colors || []).map((color) => `<span class="swatch" style="background:${colorValue(color)}" title="${color}"></span>`).join('')}<span>${(product.sizes || []).join(', ')}</span><span>${totalStock(product)} stok</span></div>
-      <div class="product-actions"><button class="primary-button" data-detail="${product.id}" type="button">Detail</button><button class="secondary-button" data-quick="${product.id}" type="button">Tambah</button></div>
+      <div class="swatches">${(product.colors || []).map((color) => `<span class="swatch" style="background:${colorValue(color)}" title="${escapeHtml(color)}"></span>`).join('')}<span>${escapeHtml((product.sizes || []).join(', '))}</span><span>${totalStock(product)} stok</span></div>
+      <div class="product-actions"><button class="primary-button" data-detail="${productId}" type="button">Detail</button><button class="secondary-button" data-quick="${productId}" type="button">Tambah</button></div>
     </div>
   </article>`;
 }
@@ -408,7 +435,7 @@ function openProduct(id) {
   activeProduct = product;
   if (hasOfficialImage(product)) {
     els.modalImage.hidden = false;
-    els.modalImage.src = product.image;
+    els.modalImage.src = safeImageUrl(product.image);
     els.modalImage.alt = product.name;
   } else {
     els.modalImage.hidden = true;
@@ -418,9 +445,9 @@ function openProduct(id) {
   els.modalDescription.textContent = product.description || 'Produk resmi Troublemaker.';
   els.modalRating.textContent = product.rating ? `Rating ${product.rating} / ${product.reviews || 0} ulasan` : 'Official product';
   els.modalPrice.innerHTML = `<strong>${money.format(salePrice(product))}</strong>${product.discount ? `<del>${money.format(product.price)}</del>` : ''}`;
-  els.modalColor.innerHTML = (product.colors || []).map((color) => `<option value="${color}">${color}</option>`).join('');
-  els.modalSize.innerHTML = (product.sizes || []).map((size) => `<option value="${size}">${size}</option>`).join('');
-  els.modalSpecs.innerHTML = (product.specs || ['Official Troublemaker product']).map((spec) => `<span>${spec}</span>`).join('');
+  els.modalColor.innerHTML = (product.colors || []).map((color) => `<option value="${escapeHtml(color)}">${escapeHtml(color)}</option>`).join('');
+  els.modalSize.innerHTML = (product.sizes || []).map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join('');
+  els.modalSpecs.innerHTML = (product.specs || ['Official Troublemaker product']).map((spec) => `<span>${escapeHtml(spec)}</span>`).join('');
   updateModalStock();
   els.productModal.classList.add('open');
   els.productModal.setAttribute('aria-hidden', 'false');
@@ -466,14 +493,16 @@ function renderCart() {
   els.cartList.innerHTML = cart.length ? cart.map((item, index) => {
     const product = products.find((entry) => entry.id === item.productId);
     if (!product) return '';
-    const image = hasOfficialImage(product) ? `<img src="${product.image}" alt="${product.name}">` : '<div class="cart-image-fallback">TM</div>';
+    const name = escapeHtml(product.name);
+    const imageUrl = safeImageUrl(product.image);
+    const image = hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${name}">` : '<div class="cart-image-fallback">TM</div>';
     return `<article class="cart-item">
       <div class="cart-item-media">${image}</div>
       <div class="cart-item-info">
-        <span class="cart-item-brand">${product.brand || 'Troublemaker'}</span>
-        <h3>${product.name}</h3>
-        <div class="cart-meta"><span>🎨 ${item.color}</span><span>📏 ${item.size}</span><span>💰 ${money.format(item.price)}</span></div>
-        <div class="quantity-row" aria-label="Jumlah ${product.name}"><button data-qty="${index}|-1" type="button">−</button><strong>${item.qty}</strong><button data-qty="${index}|1" type="button">+</button></div>
+        <span class="cart-item-brand">${escapeHtml(product.brand || 'Troublemaker')}</span>
+        <h3>${name}</h3>
+        <div class="cart-meta"><span>Color ${escapeHtml(item.color)}</span><span>Size ${escapeHtml(item.size)}</span><span>${money.format(item.price)}</span></div>
+        <div class="quantity-row" aria-label="Jumlah ${name}"><button data-qty="${index}|-1" type="button">-</button><strong>${Number(item.qty || 0)}</strong><button data-qty="${index}|1" type="button">+</button></div>
       </div>
       <div class="cart-item-total"><span>Total item</span><strong>${money.format(item.price * item.qty)}</strong><button class="small-button" data-remove="${index}" type="button">Hapus</button></div>
     </article>`;
@@ -484,7 +513,7 @@ function renderCart() {
 function renderWishlist() {
   if (!els.wishlistList) return;
   const items = wishlist.map((id) => products.find((product) => product.id === id)).filter(Boolean);
-  els.wishlistList.innerHTML = items.length ? items.map((product) => `<div class="wishlist-item"><span>${product.name}<br><small>${money.format(salePrice(product))}</small></span><button class="secondary-button" data-detail="${product.id}" type="button">Detail</button></div>`).join('') : '<p>Belum ada produk tersimpan.</p>';
+  els.wishlistList.innerHTML = items.length ? items.map((product) => `<div class="wishlist-item"><span>${escapeHtml(product.name)}<br><small>${money.format(salePrice(product))}</small></span><button class="secondary-button" data-detail="${escapeHtml(product.id)}" type="button">Detail</button></div>`).join('') : '<p>Belum ada produk tersimpan.</p>';
   els.wishlistCount.textContent = wishlist.length;
 }
 function cartSummary() {
@@ -504,13 +533,14 @@ function renderCheckoutItems() {
     const product = products.find((entry) => entry.id === item.productId);
     const name = product?.name || 'Produk tidak tersedia';
     const unitPrice = Number(item.price || 0);
-    const image = product && hasOfficialImage(product) ? `<img src="${product.image}" alt="${name}">` : '<div class="checkout-image-fallback">TM</div>';
+    const imageUrl = product ? safeImageUrl(product.image) : '';
+    const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="checkout-image-fallback">TM</div>';
     return `<article class="checkout-summary-item">
       ${image}
       <div>
-        <h4>${name}</h4>
-        <p>${item.color} / ${item.size}</p>
-        <span>${money.format(unitPrice)} x ${item.qty}</span>
+        <h4>${escapeHtml(name)}</h4>
+        <p>${escapeHtml(item.color)} / ${escapeHtml(item.size)}</p>
+        <span>${money.format(unitPrice)} x ${Number(item.qty || 0)}</span>
       </div>
       <strong>${money.format(unitPrice * Number(item.qty || 0))}</strong>
     </article>`;
@@ -569,13 +599,14 @@ function orderItemDetail(item) {
   const product = products.find((entry) => entry.id === item.productId);
   const name = product?.name || 'Produk tidak tersedia';
   const brand = product?.brand || 'Troublemaker';
-  const image = product && hasOfficialImage(product) ? `<img src="${product.image}" alt="${name}">` : '<div class="order-image-fallback">TM</div>';
+  const imageUrl = product ? safeImageUrl(product.image) : '';
+  const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="order-image-fallback">TM</div>';
   return `<div class="order-item">
     ${image}
     <div>
-      <span>${brand}</span>
-      <strong>${name}</strong>
-      <small>${item.color} / ${item.size} / Qty ${item.qty}</small>
+      <span>${escapeHtml(brand)}</span>
+      <strong>${escapeHtml(name)}</strong>
+      <small>${escapeHtml(item.color)} / ${escapeHtml(item.size)} / Qty ${Number(item.qty || 0)}</small>
     </div>
     <strong>${money.format(Number(item.price || 0) * Number(item.qty || 0))}</strong>
   </div>`;
@@ -597,17 +628,17 @@ function renderOrders() {
       <div class="order-card-header">
         <div>
           <span class="order-label">Invoice</span>
-          <strong>${order.number}</strong>
-          <small>${date}</small>
+          <strong>${escapeHtml(order.number)}</strong>
+          <small>${escapeHtml(date)}</small>
         </div>
-        <span class="status-pill">${order.status}</span>
+        <span class="status-pill">${escapeHtml(order.status)}</span>
       </div>
       <div class="order-progress" aria-label="Status pesanan"><span class="active"></span><span></span><span></span></div>
       <div class="order-detail-grid">
-        <div><span>👤 Pelanggan</span><strong>${order.customer || '-'}</strong><small>${order.phone || '-'}</small></div>
-        <div><span>📍 Alamat</span><strong>${order.address || '-'}</strong><small>${order.email || '-'}</small></div>
-        <div><span>🚚 Pengiriman</span><strong>${order.courier || 'Reguler'}</strong><small>Resi: ${order.tracking || 'Belum tersedia'}</small></div>
-        <div><span>💳 Pembayaran</span><strong>${order.payment || '-'}</strong><small>${order.voucher ? `Voucher: ${order.voucher}` : 'Tanpa voucher'}</small></div>
+        <div><span>Pelanggan</span><strong>${escapeHtml(order.customer || '-')}</strong><small>${escapeHtml(order.phone || '-')}</small></div>
+        <div><span>Alamat</span><strong>${escapeHtml(order.address || '-')}</strong><small>${escapeHtml(order.email || '-')}</small></div>
+        <div><span>Pengiriman</span><strong>${escapeHtml(order.courier || 'Reguler')}</strong><small>Resi: ${escapeHtml(order.tracking || 'Belum tersedia')}</small></div>
+        <div><span>Pembayaran</span><strong>${escapeHtml(order.payment || '-')}</strong><small>${order.voucher ? `Voucher: ${escapeHtml(order.voucher)}` : 'Tanpa voucher'}</small></div>
       </div>
       <div class="order-items">${(order.items || []).map(orderItemDetail).join('')}</div>
       <div class="order-summary-mini">
@@ -821,7 +852,8 @@ function bindAdmin() {
   }
   function updateImagePreview(src) {
     if (!imagePreview) return;
-    imagePreview.innerHTML = src ? `<img src="${src}" alt="Preview foto produk resmi">` : 'Preview foto resmi';
+    const image = safeImageUrl(src);
+    imagePreview.innerHTML = image ? `<img src="${escapeHtml(image)}" alt="Preview foto produk resmi">` : 'Preview foto resmi';
   }
   function resolveAdminImage() {
     return currentImage?.value || imageUrl?.value.trim() || '';
@@ -866,8 +898,8 @@ function bindAdmin() {
     const colors = document.getElementById('admin-product-colors').value.split(',').map((item) => item.trim()).filter(Boolean);
     const sizes = document.getElementById('admin-product-sizes').value.split(',').map((item) => item.trim().toUpperCase()).filter(Boolean);
     const stockEach = Number(document.getElementById('admin-product-stock').value || 0);
-    const image = resolveAdminImage();
-    if (!image) { toast('Tambahkan foto jaket Troublemaker asli lewat upload atau URL resmi.'); return; }
+    const image = safeImageUrl(resolveAdminImage());
+    if (!image) { toast('Gunakan gambar dari assets/, upload JPG/PNG/WebP, atau URL HTTPS yang valid.'); return; }
     const stock = {}; colors.forEach((color) => sizes.forEach((size) => { stock[`${color}-${size}`] = stockEach; }));
     const payload = {
       id: productId?.value || `official-${Date.now()}`,
@@ -896,7 +928,8 @@ function bindAdmin() {
   });
   document.getElementById('reset-products-admin')?.addEventListener('click', () => { products = clone(DEFAULT_PRODUCTS); write(STORE_KEYS.products, products); write(STORE_KEYS.seedVersion, OFFICIAL_SEED_VERSION); resetProductForm(); renderAdmin(); toast('Katalog default berhasil dikembalikan.'); });
   document.getElementById('export-report')?.addEventListener('click', () => {
-    const rows = ['order_number,customer,total,status,created_at', ...orders.map((order) => `${order.number},${order.customer},${order.total},${order.status},${order.createdAt}`)];
+    const csvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
+    const rows = ['order_number,customer,total,status,created_at', ...orders.map((order) => [order.number, order.customer, order.total, order.status, order.createdAt].map(csvCell).join(','))];
     const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
     const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'troublemaker-report.csv'; a.click(); URL.revokeObjectURL(url);
   });
@@ -927,7 +960,7 @@ function bindAdmin() {
     if (deleteBtn) {
       const product = products.find((item) => item.id === deleteBtn.dataset.productDelete);
       if (!product) return;
-      if (!confirm(`Hapus ${product.name} dari katalog?`)) return;
+      if (!confirm(`Hapus ${product.name || 'produk'} dari katalog?`)) return;
       products = products.filter((item) => item.id !== product.id);
       cart = cart.filter((item) => item.productId !== product.id);
       wishlist = wishlist.filter((id) => id !== product.id);
@@ -962,12 +995,21 @@ function renderAdmin() {
     metrics.innerHTML = `<div class="metric-card"><span>Total omzet</span><strong>${money.format(revenue)}</strong></div><div class="metric-card"><span>Pesanan</span><strong>${orders.length}</strong></div><div class="metric-card"><span>User</span><strong>${users.length}</strong></div><div class="metric-card"><span>Stok menipis</span><strong>${lowStock}</strong></div>`;
   }
   const productTable = document.getElementById('admin-products-table');
-  if (productTable) productTable.innerHTML = products.length ? products.map((product) => `<tr><td>${hasOfficialImage(product) ? `<img class="admin-product-thumb" src="${product.image}" alt="${product.name}">` : '<span class="admin-no-image">Foto wajib</span>'}</td><td>${product.name}<br><small>${product.brand}</small></td><td>${product.category}</td><td>${money.format(salePrice(product))}</td><td>${totalStock(product)}</td><td>${hasOfficialImage(product) ? 'Aktif' : 'Perlu foto resmi'}</td><td><button class="small-button" data-product-edit="${product.id}" type="button">Edit</button> <button class="small-button danger-button" data-product-delete="${product.id}" type="button">Hapus</button></td></tr>`).join('') : '<tr><td colspan="7">Belum ada produk resmi. Upload foto jaket Troublemaker asli melalui form di atas.</td></tr>';
+  if (productTable) productTable.innerHTML = products.length ? products.map((product) => {
+    const id = escapeHtml(product.id);
+    const name = escapeHtml(product.name);
+    const imageUrl = safeImageUrl(product.image);
+    const image = hasOfficialImage(product) ? `<img class="admin-product-thumb" src="${escapeHtml(imageUrl)}" alt="${name}">` : '<span class="admin-no-image">Foto wajib</span>';
+    return `<tr><td>${image}</td><td>${name}<br><small>${escapeHtml(product.brand)}</small></td><td>${escapeHtml(product.category)}</td><td>${money.format(salePrice(product))}</td><td>${totalStock(product)}</td><td>${hasOfficialImage(product) ? 'Aktif' : 'Perlu foto resmi'}</td><td><button class="small-button" data-product-edit="${id}" type="button">Edit</button> <button class="small-button danger-button" data-product-delete="${id}" type="button">Hapus</button></td></tr>`;
+  }).join('') : '<tr><td colspan="7">Belum ada produk resmi. Upload foto jaket Troublemaker asli melalui form di atas.</td></tr>';
   const orderTable = document.getElementById('admin-orders-table');
-  if (orderTable) orderTable.innerHTML = orders.length ? orders.map((order) => `<tr><td>${order.number}</td><td>${order.customer}</td><td>${money.format(order.total)}</td><td>${order.status}</td><td><button class="small-button" data-order-status="${order.number}|Diproses">Proses</button> <button class="small-button" data-order-status="${order.number}|Dikirim">Kirim</button> <button class="small-button" data-order-status="${order.number}|Selesai">Selesai</button></td></tr>`).join('') : '<tr><td colspan="5">Belum ada pesanan.</td></tr>';
+  if (orderTable) orderTable.innerHTML = orders.length ? orders.map((order) => {
+    const number = escapeHtml(order.number);
+    return `<tr><td>${number}</td><td>${escapeHtml(order.customer)}</td><td>${money.format(order.total)}</td><td>${escapeHtml(order.status)}</td><td><button class="small-button" data-order-status="${number}|Diproses">Proses</button> <button class="small-button" data-order-status="${number}|Dikirim">Kirim</button> <button class="small-button" data-order-status="${number}|Selesai">Selesai</button></td></tr>`;
+  }).join('') : '<tr><td colspan="5">Belum ada pesanan.</td></tr>';
   const report = document.getElementById('report-box');
   if (report) {
-    const aov = orders.length ? orders.reduce((sum, order) => sum + order.total, 0) / orders.length : 0;
+    const aov = orders.length ? orders.reduce((sum, order) => sum + Number(order.total || 0), 0) / orders.length : 0;
     report.innerHTML = `<span>Average order value: <strong>${money.format(aov)}</strong></span><span>Total produk resmi: <strong>${products.length}</strong></span><span>Total akun customer: <strong>${users.length}</strong></span>`;
   }
 }

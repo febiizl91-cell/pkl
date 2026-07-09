@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="Dashboard admin TroubleMaker untuk produk jaket, stok, pesanan, customer, dan laporan." />
+    <meta name="robots" content="noindex, nofollow" />
     <title>Admin TroubleMaker</title>
     <link rel="stylesheet" href="styles.css?v=dark-neon-1" />
   </head>
@@ -27,8 +32,8 @@
           <h1>Dashboard operasional TroubleMaker</h1>
           <p>Gunakan akses admin untuk mengelola katalog jaket resmi, stok, akun customer, dan status pesanan.</p>
           <form id="admin-login-form" class="stack-form">
-            <label>Username<input id="admin-username" value="admin" required /></label>
-            <label>Password<input id="admin-password" type="password" value="tm12345" required /></label>
+            <label>Username<input id="admin-username" autocomplete="username" required /></label>
+            <label>Password<input id="admin-password" type="password" autocomplete="current-password" required /></label>
             <button class="primary-button" type="submit">Masuk</button>
           </form>
         </section>
@@ -73,7 +78,7 @@
               <label>Ukuran<input id="admin-product-sizes" placeholder="S, M, L, XL" required /></label>
               <label>Stok per varian<input id="admin-product-stock" type="number" min="0" value="8" required /></label>
               <label class="admin-image-field">Upload foto resmi<input id="admin-product-file" type="file" accept="image/png,image/jpeg,image/webp" /></label>
-              <label>URL foto resmi<input id="admin-product-image" placeholder="assets/products/jaket-asli.webp atau https://..." /></label>
+              <label>URL foto resmi<input id="admin-product-image" inputmode="url" placeholder="assets/products/jaket-asli.webp atau https://domain-resmi/..." /></label>
               <label>Deskripsi<textarea id="admin-product-description" rows="3" required></textarea></label>
               <div class="admin-image-preview" id="admin-image-preview">Preview foto resmi</div>
               <div class="admin-form-actions">

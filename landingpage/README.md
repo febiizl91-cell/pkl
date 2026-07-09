@@ -9,14 +9,21 @@ cd landingpage
 python3 -m http.server 3001
 ```
 
-Buka `http://127.0.0.1:3001`.
+Buka `http://127.0.0.1:3001` untuk pengujian lokal saja. Untuk publikasi, deploy di hosting yang mengaktifkan HTTPS dan redirect HTTP ke HTTPS.
+
+## Keamanan Deploy
+
+- File `_headers` menyiapkan CSP, HSTS, `X-Content-Type-Options`, `X-Frame-Options`, Referrer Policy, dan Permissions Policy untuk hosting statis yang mendukungnya.
+- Pastikan domain produksi memakai HTTPS valid dan redirect semua request HTTP ke HTTPS dari pengaturan hosting.
+- Halaman admin demo diberi `noindex` dan dikeluarkan dari sitemap.
+- URL gambar produk dibatasi ke `assets/...`, upload gambar lokal, atau URL `https://`; URL `http://` dan skema berbahaya ditolak oleh JavaScript.
 
 ## Admin Demo
 
 - Username: `admin`
 - Password: `tm12345`
 
-Data produk, akun customer, cart, wishlist, dan pesanan disimpan di `localStorage` browser.
+Data produk, akun customer, cart, wishlist, dan pesanan disimpan di `localStorage` browser untuk kebutuhan demo statis. Jangan gunakan mode ini untuk transaksi produksi tanpa backend, database, hashing password server-side, dan autentikasi admin sungguhan.
 
 ## Catatan Produk Asli
 
