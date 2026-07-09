@@ -1,20 +1,20 @@
-# PRD Website Toko Online Jaket OSTRACISM
+# PRD Website Toko Online Ostracism
 
 ## 1. Ringkasan Produk
 
-OSTRACISM adalah website toko online untuk menjual jaket streetwear seperti bomber, hoodie, denim jacket, varsity, coach jacket, dan windbreaker. Website ini dibuat agar pelanggan dapat melihat katalog produk, mencari jaket berdasarkan kategori/ukuran/warna/harga, menyimpan wishlist, memasukkan produk ke cart, melakukan checkout, serta melihat riwayat dan status pesanan.
+Ostracism adalah website toko online untuk menjual jaket streetwear seperti bomber, hoodie, denim jacket, varsity, coach jacket, dan windbreaker. Website ini dibuat agar pelanggan dapat melihat katalog produk, mencari jaket berdasarkan kategori/ukuran/warna/harga, menyimpan wishlist, memasukkan produk ke cart, melakukan checkout, serta melihat riwayat dan status pesanan.
 
 Website juga memiliki halaman admin untuk mengelola produk jaket, melihat pesanan, mengubah status pesanan, dan melihat laporan sederhana.
 
 ## 2. Latar Belakang
 
-Brand OSTRACISM membutuhkan platform toko online yang rapi, mudah digunakan, dan cocok untuk produk streetwear. Website harus membantu pelanggan menemukan jaket yang sesuai ukuran dan gaya mereka, sekaligus memudahkan admin dalam mengelola katalog serta pesanan.
+Brand Ostracism membutuhkan platform toko online yang rapi, mudah digunakan, dan cocok untuk produk streetwear. Website harus membantu pelanggan menemukan jaket yang sesuai ukuran dan gaya mereka, sekaligus memudahkan admin dalam mengelola katalog serta pesanan.
 
 Untuk kebutuhan tugas PKL/sekolah, website ini dibuat sebagai sistem toko online berbasis web statis dengan penyimpanan lokal menggunakan `localStorage`. Pada pengembangan berikutnya, sistem dapat ditingkatkan dengan database dan backend.
 
 ## 3. Tujuan Produk
 
-- Menyediakan katalog jaket OSTRACISM yang informatif dan mudah dicari.
+- Menyediakan katalog Ostracism yang informatif dan mudah dicari.
 - Memudahkan pelanggan memilih produk berdasarkan kategori, ukuran, warna, harga, dan rating.
 - Menyediakan fitur login/register sederhana untuk customer.
 - Memungkinkan pelanggan menyimpan produk favorit ke wishlist.
@@ -27,7 +27,7 @@ Untuk kebutuhan tugas PKL/sekolah, website ini dibuat sebagai sistem toko online
 
 ### 4.1 Customer
 
-Customer adalah pengguna yang ingin membeli jaket OSTRACISM secara online.
+Customer adalah pengguna yang ingin membeli Ostracism secara online.
 
 Kebutuhan customer:
 
@@ -58,7 +58,7 @@ Kebutuhan admin:
 
 ### 5.1 Termasuk Dalam Scope
 
-- Landing page brand OSTRACISM.
+- Landing page brand Ostracism.
 - Katalog produk jaket.
 - Filter produk.
 - Pencarian produk.
@@ -93,7 +93,7 @@ Landing page menjadi halaman pertama yang dilihat pengguna.
 
 Konten yang ditampilkan:
 
-- Nama brand OSTRACISM.
+- Nama brand Ostracism.
 - Hero image jaket streetwear.
 - Deskripsi singkat toko.
 - Search bar produk.
@@ -102,7 +102,7 @@ Konten yang ditampilkan:
 
 Acceptance criteria:
 
-- Brand OSTRACISM terlihat jelas di header dan hero.
+- Brand Ostracism terlihat jelas di header dan hero.
 - Tombol navigasi mengarah ke section yang benar.
 - Search bar dapat mengisi pencarian katalog.
 - Tampilan tetap rapi di layar HP dan desktop.
@@ -467,7 +467,7 @@ Acceptance criteria:
 {
   "id": "os-bomber-black",
   "name": "Riot Bomber Black",
-  "brand": "OSTRACISM",
+  "brand": "Ostracism",
   "category": "Bomber",
   "price": 549000,
   "discount": 12,
@@ -541,7 +541,7 @@ Catatan:
 
 ### 10.1 Alur Belanja Customer
 
-1. Customer membuka website OSTRACISM.
+1. Customer membuka website Ostracism.
 2. Customer melihat katalog produk.
 3. Customer mencari atau memfilter produk.
 4. Customer membuka detail produk.
@@ -697,4 +697,4 @@ Website dianggap selesai jika:
 
 ## 17. Kesimpulan
 
-Website toko online jaket OSTRACISM dirancang sebagai sistem e-commerce sederhana yang mencakup fitur utama belanja online: katalog, detail produk, login/register, wishlist, cart, checkout, riwayat pesanan, dan admin dashboard. Versi saat ini cocok untuk demo PKL atau tugas sekolah, sedangkan versi lanjutan dapat dikembangkan menjadi aplikasi produksi dengan backend dan database.
+Website toko online Ostracism dirancang sebagai sistem e-commerce sederhana yang mencakup fitur utama belanja online: katalog, detail produk, login/register, wishlist, cart, checkout, riwayat pesanan, dan admin dashboard. Versi saat ini cocok untuk demo PKL atau tugas sekolah, sedangkan versi lanjutan dapat dikembangkan menjadi aplikasi produksi dengan backend dan database.

@@ -1,41 +1,41 @@
 const DEFAULT_PRODUCTS = [
   {
-    id: 'os-bomber-black', name: 'Riot Bomber Black', brand: 'OSTRACISM', category: 'Bomber', price: 549000, discount: 12, rating: 4.8, reviews: 128, createdAt: '2026-06-28', fit: 'Regular fit', gender: 'Unisex',
+    id: 'os-bomber-black', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Bomber', price: 549000, discount: 12, rating: 4.8, reviews: 128, createdAt: '2026-06-28', fit: 'Regular fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80',
     description: 'Bomber hitam berbahan tebal dengan rib elastis untuk outfit streetwear harian.',
     specs: ['Taslan premium water repellent', 'Furing halus', 'Saku depan dan inner pocket', 'Rib manset dan pinggang'],
     colors: ['Hitam', 'Olive'], sizes: ['S', 'M', 'L', 'XL'], stock: { 'Hitam-S': 8, 'Hitam-M': 10, 'Hitam-L': 12, 'Hitam-XL': 7, 'Olive-M': 6, 'Olive-L': 5, 'Olive-XL': 3 }
   },
   {
-    id: 'os-hoodie-ash', name: 'No Rules Hoodie Ash', brand: 'OSTRACISM', category: 'Hoodie', price: 389000, discount: 8, rating: 4.7, reviews: 96, createdAt: '2026-06-18', fit: 'Oversized fit', gender: 'Unisex',
+    id: 'os-hoodie-ash', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Hoodie', price: 389000, discount: 8, rating: 4.7, reviews: 96, createdAt: '2026-06-18', fit: 'Oversized fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=900&q=80',
-    description: 'Hoodie fleece oversized dengan kantong kangaroo dan sablon OSTRACISM di dada.',
+    description: 'Hoodie fleece oversized dengan kantong kangaroo dan sablon Jaket Trouble Maker di dada.',
     specs: ['Cotton fleece 330gsm', 'Hoodie tali bulat', 'Kantong kangaroo', 'Sablon plastisol tahan cuci'],
     colors: ['Abu', 'Hitam'], sizes: ['S', 'M', 'L', 'XL', 'XXL'], stock: { 'Abu-S': 6, 'Abu-M': 12, 'Abu-L': 11, 'Abu-XL': 8, 'Hitam-M': 8, 'Hitam-L': 9, 'Hitam-XL': 5, 'Hitam-XXL': 3 }
   },
   {
-    id: 'os-denim-blue', name: 'Rebel Denim Jacket', brand: 'OSTRACISM', category: 'Denim Jacket', price: 629000, discount: 0, rating: 4.6, reviews: 74, createdAt: '2026-06-08', fit: 'Boxy fit', gender: 'Unisex',
+    id: 'os-denim-blue', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Denim Jacket', price: 629000, discount: 0, rating: 4.6, reviews: 74, createdAt: '2026-06-08', fit: 'Boxy fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=900&q=80',
-    description: 'Jaket denim boxy dengan wash biru klasik dan patch woven OSTRACISM.',
+    description: 'Jaket denim boxy dengan wash biru klasik dan patch woven Jaket Trouble Maker.',
     specs: ['Denim 13oz', 'Kancing metal', 'Patch woven', 'Dua kantong dada'],
     colors: ['Navy', 'Hitam'], sizes: ['M', 'L', 'XL', 'XXL'], stock: { 'Navy-M': 5, 'Navy-L': 9, 'Navy-XL': 6, 'Navy-XXL': 2, 'Hitam-M': 4, 'Hitam-L': 7, 'Hitam-XL': 4 }
   },
   {
-    id: 'os-varsity-maroon', name: 'Street Varsity Maroon', brand: 'OSTRACISM', category: 'Varsity', price: 699000, discount: 15, rating: 4.9, reviews: 112, createdAt: '2026-05-29', fit: 'Relaxed fit', gender: 'Unisex',
+    id: 'os-varsity-maroon', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Varsity', price: 699000, discount: 15, rating: 4.9, reviews: 112, createdAt: '2026-05-29', fit: 'Relaxed fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
     description: 'Varsity maroon dengan kombinasi lengan kontras dan bordir emblem depan.',
     specs: ['Body wool blend', 'Lengan synthetic leather', 'Bordir emblem', 'Snap button premium'],
     colors: ['Maroon', 'Hitam'], sizes: ['S', 'M', 'L', 'XL'], stock: { 'Maroon-S': 4, 'Maroon-M': 8, 'Maroon-L': 8, 'Maroon-XL': 4, 'Hitam-M': 5, 'Hitam-L': 6, 'Hitam-XL': 3 }
   },
   {
-    id: 'os-windbreaker-navy', name: 'Afterdark Windbreaker', brand: 'OSTRACISM', category: 'Windbreaker', price: 459000, discount: 10, rating: 4.7, reviews: 88, createdAt: '2026-06-30', fit: 'Regular fit', gender: 'Unisex',
+    id: 'os-windbreaker-navy', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Windbreaker', price: 459000, discount: 10, rating: 4.7, reviews: 88, createdAt: '2026-06-30', fit: 'Regular fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1506629905607-d9f297d0698b?auto=format&fit=crop&w=900&q=80',
     description: 'Windbreaker ringan dengan tudung lipat untuk riding, hujan tipis, dan aktivitas outdoor.',
     specs: ['Parasut ripstop', 'Hoodie lipat', 'Ventilasi belakang', 'Hem adjustable'],
     colors: ['Navy', 'Olive'], sizes: ['S', 'M', 'L', 'XL', 'XXL'], stock: { 'Navy-S': 6, 'Navy-M': 9, 'Navy-L': 10, 'Navy-XL': 7, 'Olive-M': 5, 'Olive-L': 6, 'Olive-XL': 3, 'Olive-XXL': 2 }
   },
   {
-    id: 'os-coach-black', name: 'Backstreet Coach Jacket', brand: 'OSTRACISM', category: 'Windbreaker', price: 419000, discount: 0, rating: 4.5, reviews: 52, createdAt: '2026-05-22', fit: 'Relaxed fit', gender: 'Unisex',
+    id: 'os-coach-black', name: 'Jaket Trouble Maker', brand: 'Jaket Trouble Maker', category: 'Windbreaker', price: 419000, discount: 0, rating: 4.5, reviews: 52, createdAt: '2026-05-22', fit: 'Relaxed fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&w=900&q=80',
     description: 'Coach jacket hitam minimalis dengan print kecil di dada dan drawcord bawah.',
     specs: ['Nylon taslan', 'Snap button', 'Drawcord hem', 'Print high density'],
@@ -120,7 +120,7 @@ function filterCopy() {
   if (els.sizeFilter?.value !== 'all') parts.push(`Ukuran ${els.sizeFilter.value}`);
   if (els.colorFilter?.value !== 'all') parts.push(els.colorFilter.value);
   if (els.priceFilter?.value !== 'all') parts.push('Rentang harga aktif');
-  return parts.length ? parts.join(' · ') : 'Semua jaket OSTRACISM';
+  return parts.length ? parts.join(' · ') : 'Semua Jaket Trouble Maker';
 }
 
 function productCard(product) {
@@ -301,7 +301,7 @@ function bindAdmin() {
     const sizes = document.getElementById('admin-product-sizes').value.split(',').map((item) => item.trim().toUpperCase()).filter(Boolean);
     const stockEach = Number(document.getElementById('admin-product-stock').value || 0);
     const stock = {}; colors.forEach((color) => sizes.forEach((size) => { stock[`${color}-${size}`] = stockEach; }));
-    products.unshift({ id: `os-${Date.now()}`, name, brand: document.getElementById('admin-product-brand').value.trim() || 'OSTRACISM', category: document.getElementById('admin-product-category').value, price: Number(document.getElementById('admin-product-price').value), discount: Number(document.getElementById('admin-product-discount').value || 0), rating: 0, reviews: 0, createdAt: new Date().toISOString(), fit: 'Regular fit', gender: 'Unisex', image: document.getElementById('admin-product-image').value.trim(), description: document.getElementById('admin-product-description').value.trim(), specs: ['Produk jaket ditambahkan admin', 'Stok per varian aktif'], colors, sizes, stock });
+    products.unshift({ id: `os-${Date.now()}`, name, brand: document.getElementById('admin-product-brand').value.trim() || 'Jaket Trouble Maker', category: document.getElementById('admin-product-category').value, price: Number(document.getElementById('admin-product-price').value), discount: Number(document.getElementById('admin-product-discount').value || 0), rating: 0, reviews: 0, createdAt: new Date().toISOString(), fit: 'Regular fit', gender: 'Unisex', image: document.getElementById('admin-product-image').value.trim(), description: document.getElementById('admin-product-description').value.trim(), specs: ['Produk jaket ditambahkan admin', 'Stok per varian aktif'], colors, sizes, stock });
     write(STORE_KEYS.products, products); event.target.reset(); renderAdmin(); toast('Produk berhasil ditambahkan.');
   });
   document.getElementById('reset-products-admin')?.addEventListener('click', () => { products = clone(DEFAULT_PRODUCTS); write(STORE_KEYS.products, products); renderAdmin(); toast('Produk demo dikembalikan.'); });

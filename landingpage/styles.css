@@ -391,7 +391,7 @@ th { background: var(--surface-soft); color: var(--ink); }
 }
 
 
-/* Premium OSTRACISM upgrade */
+/* Premium Ostracism upgrade */
 :root {
   --ink: #0d0e12;
   --ink-2: #181a21;
@@ -466,7 +466,7 @@ body::before {
 }
 
 .hero::after {
-  content: "OSTRACISM";
+  content: "Ostracism";
   position: absolute;
   right: -4vw;
   bottom: -2vw;
