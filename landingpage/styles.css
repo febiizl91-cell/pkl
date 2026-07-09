@@ -391,7 +391,7 @@ th { background: var(--surface-soft); color: var(--ink); }
 }
 
 
-/* Premium Troublemaker upgrade */
+/* Premium OSTRACISM upgrade */
 :root {
   --ink: #0d0e12;
   --ink-2: #181a21;
@@ -466,7 +466,7 @@ body::before {
 }
 
 .hero::after {
-  content: "TROUBLEMAKER";
+  content: "OSTRACISM";
   position: absolute;
   right: -4vw;
   bottom: -2vw;
@@ -595,7 +595,7 @@ body::before {
     #121319;
 }
 .auth-visual::after {
-  content: "TM";
+  content: "OS";
   position: absolute;
   right: -2vw;
   bottom: -3vw;
@@ -706,6 +706,13 @@ body::before {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.brand-letter {
+  color: #fff;
+  font-weight: 950;
+  font-size: 1.12rem;
+  letter-spacing: 0;
 }
 .site-footer .brand-mark,
 .auth-brand .brand-mark {

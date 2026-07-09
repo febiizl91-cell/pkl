@@ -1,4 +1,4 @@
-# TroubleMaker
+# OSTRACISM
 
 Implementasi static web app toko online jaket streetwear dengan katalog, filter ukuran, detail produk, login/register, wishlist, cart, checkout, riwayat pesanan, dan admin dashboard demo.
 

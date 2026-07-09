@@ -1,41 +1,41 @@
 const DEFAULT_PRODUCTS = [
   {
-    id: 'tm-bomber-black', name: 'Riot Bomber Black', brand: 'TroubleMaker', category: 'Bomber', price: 549000, discount: 12, rating: 4.8, reviews: 128, createdAt: '2026-06-28', fit: 'Regular fit', gender: 'Unisex',
+    id: 'os-bomber-black', name: 'Riot Bomber Black', brand: 'OSTRACISM', category: 'Bomber', price: 549000, discount: 12, rating: 4.8, reviews: 128, createdAt: '2026-06-28', fit: 'Regular fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80',
     description: 'Bomber hitam berbahan tebal dengan rib elastis untuk outfit streetwear harian.',
     specs: ['Taslan premium water repellent', 'Furing halus', 'Saku depan dan inner pocket', 'Rib manset dan pinggang'],
     colors: ['Hitam', 'Olive'], sizes: ['S', 'M', 'L', 'XL'], stock: { 'Hitam-S': 8, 'Hitam-M': 10, 'Hitam-L': 12, 'Hitam-XL': 7, 'Olive-M': 6, 'Olive-L': 5, 'Olive-XL': 3 }
   },
   {
-    id: 'tm-hoodie-ash', name: 'No Rules Hoodie Ash', brand: 'TroubleMaker', category: 'Hoodie', price: 389000, discount: 8, rating: 4.7, reviews: 96, createdAt: '2026-06-18', fit: 'Oversized fit', gender: 'Unisex',
+    id: 'os-hoodie-ash', name: 'No Rules Hoodie Ash', brand: 'OSTRACISM', category: 'Hoodie', price: 389000, discount: 8, rating: 4.7, reviews: 96, createdAt: '2026-06-18', fit: 'Oversized fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=900&q=80',
-    description: 'Hoodie fleece oversized dengan kantong kangaroo dan sablon TroubleMaker di dada.',
+    description: 'Hoodie fleece oversized dengan kantong kangaroo dan sablon OSTRACISM di dada.',
     specs: ['Cotton fleece 330gsm', 'Hoodie tali bulat', 'Kantong kangaroo', 'Sablon plastisol tahan cuci'],
     colors: ['Abu', 'Hitam'], sizes: ['S', 'M', 'L', 'XL', 'XXL'], stock: { 'Abu-S': 6, 'Abu-M': 12, 'Abu-L': 11, 'Abu-XL': 8, 'Hitam-M': 8, 'Hitam-L': 9, 'Hitam-XL': 5, 'Hitam-XXL': 3 }
   },
   {
-    id: 'tm-denim-blue', name: 'Rebel Denim Jacket', brand: 'TroubleMaker', category: 'Denim Jacket', price: 629000, discount: 0, rating: 4.6, reviews: 74, createdAt: '2026-06-08', fit: 'Boxy fit', gender: 'Unisex',
+    id: 'os-denim-blue', name: 'Rebel Denim Jacket', brand: 'OSTRACISM', category: 'Denim Jacket', price: 629000, discount: 0, rating: 4.6, reviews: 74, createdAt: '2026-06-08', fit: 'Boxy fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=900&q=80',
-    description: 'Jaket denim boxy dengan wash biru klasik dan patch woven TroubleMaker.',
+    description: 'Jaket denim boxy dengan wash biru klasik dan patch woven OSTRACISM.',
     specs: ['Denim 13oz', 'Kancing metal', 'Patch woven', 'Dua kantong dada'],
     colors: ['Navy', 'Hitam'], sizes: ['M', 'L', 'XL', 'XXL'], stock: { 'Navy-M': 5, 'Navy-L': 9, 'Navy-XL': 6, 'Navy-XXL': 2, 'Hitam-M': 4, 'Hitam-L': 7, 'Hitam-XL': 4 }
   },
   {
-    id: 'tm-varsity-maroon', name: 'Street Varsity Maroon', brand: 'TroubleMaker', category: 'Varsity', price: 699000, discount: 15, rating: 4.9, reviews: 112, createdAt: '2026-05-29', fit: 'Relaxed fit', gender: 'Unisex',
+    id: 'os-varsity-maroon', name: 'Street Varsity Maroon', brand: 'OSTRACISM', category: 'Varsity', price: 699000, discount: 15, rating: 4.9, reviews: 112, createdAt: '2026-05-29', fit: 'Relaxed fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
     description: 'Varsity maroon dengan kombinasi lengan kontras dan bordir emblem depan.',
     specs: ['Body wool blend', 'Lengan synthetic leather', 'Bordir emblem', 'Snap button premium'],
     colors: ['Maroon', 'Hitam'], sizes: ['S', 'M', 'L', 'XL'], stock: { 'Maroon-S': 4, 'Maroon-M': 8, 'Maroon-L': 8, 'Maroon-XL': 4, 'Hitam-M': 5, 'Hitam-L': 6, 'Hitam-XL': 3 }
   },
   {
-    id: 'tm-windbreaker-navy', name: 'Afterdark Windbreaker', brand: 'TroubleMaker', category: 'Windbreaker', price: 459000, discount: 10, rating: 4.7, reviews: 88, createdAt: '2026-06-30', fit: 'Regular fit', gender: 'Unisex',
+    id: 'os-windbreaker-navy', name: 'Afterdark Windbreaker', brand: 'OSTRACISM', category: 'Windbreaker', price: 459000, discount: 10, rating: 4.7, reviews: 88, createdAt: '2026-06-30', fit: 'Regular fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1506629905607-d9f297d0698b?auto=format&fit=crop&w=900&q=80',
     description: 'Windbreaker ringan dengan tudung lipat untuk riding, hujan tipis, dan aktivitas outdoor.',
     specs: ['Parasut ripstop', 'Hoodie lipat', 'Ventilasi belakang', 'Hem adjustable'],
     colors: ['Navy', 'Olive'], sizes: ['S', 'M', 'L', 'XL', 'XXL'], stock: { 'Navy-S': 6, 'Navy-M': 9, 'Navy-L': 10, 'Navy-XL': 7, 'Olive-M': 5, 'Olive-L': 6, 'Olive-XL': 3, 'Olive-XXL': 2 }
   },
   {
-    id: 'tm-coach-black', name: 'Backstreet Coach Jacket', brand: 'TroubleMaker', category: 'Windbreaker', price: 419000, discount: 0, rating: 4.5, reviews: 52, createdAt: '2026-05-22', fit: 'Relaxed fit', gender: 'Unisex',
+    id: 'os-coach-black', name: 'Backstreet Coach Jacket', brand: 'OSTRACISM', category: 'Windbreaker', price: 419000, discount: 0, rating: 4.5, reviews: 52, createdAt: '2026-05-22', fit: 'Relaxed fit', gender: 'Unisex',
     image: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&w=900&q=80',
     description: 'Coach jacket hitam minimalis dengan print kecil di dada dan drawcord bawah.',
     specs: ['Nylon taslan', 'Snap button', 'Drawcord hem', 'Print high density'],
@@ -52,7 +52,7 @@ const els = {
 };
 
 const money = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-const STORE_KEYS = { products: 'troubleMakerProducts', cart: 'troubleMakerCart', wishlist: 'troubleMakerWishlist', orders: 'troubleMakerOrders', users: 'troubleMakerUsers', customer: 'troubleMakerCustomer', admin: 'troubleMakerAdmin' };
+const STORE_KEYS = { products: 'ostracismProducts', cart: 'ostracismCart', wishlist: 'ostracismWishlist', orders: 'ostracismOrders', users: 'ostracismUsers', customer: 'ostracismCustomer', admin: 'ostracismAdmin' };
 let activeProduct = null;
 let authAction = 'login';
 function clone(value) { return JSON.parse(JSON.stringify(value)); }
@@ -66,7 +66,7 @@ function read(key, fallback) { try { return JSON.parse(localStorage.getItem(key)
 function write(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
 function loadProducts() {
   const stored = read(STORE_KEYS.products, null);
-  if (stored && stored.some((item) => String(item.id).startsWith('tm-'))) return stored;
+  if (stored && stored.some((item) => String(item.id).startsWith('os-'))) return stored;
   write(STORE_KEYS.products, DEFAULT_PRODUCTS);
   return clone(DEFAULT_PRODUCTS);
 }
@@ -120,7 +120,7 @@ function filterCopy() {
   if (els.sizeFilter?.value !== 'all') parts.push(`Ukuran ${els.sizeFilter.value}`);
   if (els.colorFilter?.value !== 'all') parts.push(els.colorFilter.value);
   if (els.priceFilter?.value !== 'all') parts.push('Rentang harga aktif');
-  return parts.length ? parts.join(' · ') : 'Semua jaket TroubleMaker';
+  return parts.length ? parts.join(' · ') : 'Semua jaket OSTRACISM';
 }
 
 function productCard(product) {
@@ -199,7 +199,7 @@ function cartSummary() {
   const courier = (els.courierSelect?.value || 'Reguler|18000').split('|');
   let shipping = Number(courier[1] || 0);
   const voucher = (els.voucherInput?.value || '').trim().toUpperCase();
-  let discount = voucher === 'TM10' ? Math.round(subtotal * 0.1) : 0;
+  let discount = voucher === 'OS10' ? Math.round(subtotal * 0.1) : 0;
   if (voucher === 'FREESHIP') shipping = 0;
   discount = Math.min(discount, subtotal);
   return { subtotal, shipping, discount, total: Math.max(subtotal + shipping - discount, 0), voucher };
@@ -271,7 +271,7 @@ function bindStorefront() {
     const customer = currentCustomer();
     if (!customer) { els.loginModal.classList.add('open'); toast('Login atau register dulu sebelum checkout.'); return; }
     const summary = cartSummary();
-    const order = { number: `TM-${Date.now().toString().slice(-7)}`, customer: document.getElementById('recipient-name').value, email: document.getElementById('recipient-email').value, phone: document.getElementById('recipient-phone').value, address: document.getElementById('recipient-address').value, payment: document.getElementById('payment-select').value, courier: els.courierSelect.value.split('|')[0], total: summary.total, status: 'Menunggu pembayaran', tracking: '', items: [...cart], createdAt: new Date().toISOString() };
+    const order = { number: `OS-${Date.now().toString().slice(-7)}`, customer: document.getElementById('recipient-name').value, email: document.getElementById('recipient-email').value, phone: document.getElementById('recipient-phone').value, address: document.getElementById('recipient-address').value, payment: document.getElementById('payment-select').value, courier: els.courierSelect.value.split('|')[0], total: summary.total, status: 'Menunggu pembayaran', tracking: '', items: [...cart], createdAt: new Date().toISOString() };
     orders.unshift(order); write(STORE_KEYS.orders, orders); cart = []; write(STORE_KEYS.cart, cart); renderCart(); renderOrders(); els.orderCreated.hidden = false; els.orderCreated.textContent = `Pesanan ${order.number} berhasil dibuat. Status: ${order.status}.`; els.checkoutForm.reset(); renderAuth(); toast('Pesanan berhasil dibuat.');
   });
   els.clearOrders?.addEventListener('click', () => { orders = []; write(STORE_KEYS.orders, orders); renderOrders(); });
@@ -301,7 +301,7 @@ function bindAdmin() {
     const sizes = document.getElementById('admin-product-sizes').value.split(',').map((item) => item.trim().toUpperCase()).filter(Boolean);
     const stockEach = Number(document.getElementById('admin-product-stock').value || 0);
     const stock = {}; colors.forEach((color) => sizes.forEach((size) => { stock[`${color}-${size}`] = stockEach; }));
-    products.unshift({ id: `tm-${Date.now()}`, name, brand: document.getElementById('admin-product-brand').value.trim() || 'TroubleMaker', category: document.getElementById('admin-product-category').value, price: Number(document.getElementById('admin-product-price').value), discount: Number(document.getElementById('admin-product-discount').value || 0), rating: 0, reviews: 0, createdAt: new Date().toISOString(), fit: 'Regular fit', gender: 'Unisex', image: document.getElementById('admin-product-image').value.trim(), description: document.getElementById('admin-product-description').value.trim(), specs: ['Produk jaket ditambahkan admin', 'Stok per varian aktif'], colors, sizes, stock });
+    products.unshift({ id: `os-${Date.now()}`, name, brand: document.getElementById('admin-product-brand').value.trim() || 'OSTRACISM', category: document.getElementById('admin-product-category').value, price: Number(document.getElementById('admin-product-price').value), discount: Number(document.getElementById('admin-product-discount').value || 0), rating: 0, reviews: 0, createdAt: new Date().toISOString(), fit: 'Regular fit', gender: 'Unisex', image: document.getElementById('admin-product-image').value.trim(), description: document.getElementById('admin-product-description').value.trim(), specs: ['Produk jaket ditambahkan admin', 'Stok per varian aktif'], colors, sizes, stock });
     write(STORE_KEYS.products, products); event.target.reset(); renderAdmin(); toast('Produk berhasil ditambahkan.');
   });
   document.getElementById('reset-products-admin')?.addEventListener('click', () => { products = clone(DEFAULT_PRODUCTS); write(STORE_KEYS.products, products); renderAdmin(); toast('Produk demo dikembalikan.'); });
@@ -317,7 +317,7 @@ function bindAdmin() {
     const order = orders.find((item) => item.number === number);
     if (!order) return;
     order.status = status;
-    if (status === 'Dikirim' && !order.tracking) order.tracking = `TMX${Date.now().toString().slice(-8)}`;
+    if (status === 'Dikirim' && !order.tracking) order.tracking = `OSX${Date.now().toString().slice(-8)}`;
     write(STORE_KEYS.orders, orders); renderAdmin(); toast(`Status ${number} diperbarui.`);
   });
   if (sessionStorage.getItem(STORE_KEYS.admin) === 'true') showDashboard();

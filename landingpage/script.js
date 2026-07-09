@@ -1,104 +1,104 @@
-const OFFICIAL_SEED_VERSION = 'tm-eleven-products-2026-07-08';
+const OFFICIAL_SEED_VERSION = 'os-shorts-products-2026-07-09';
 const HERO_TITLE_IMAGE = 'assets/hero-orang.jpeg';
 const DEFAULT_PRODUCTS = [
   {
-    id: 'tm-hitam-original-jacket',
-    name: 'Troublemaker Black Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-hitam-original-jacket',
+    name: 'OSTRACISM Black Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 275000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:00:00.000Z',
-    image: 'assets/products/tm-hitam.jpeg',
-    description: 'Jaket Troublemaker original warna hitam dengan detail patch resmi dan tampilan streetwear clean.',
-    specs: ['Produk resmi Troublemaker', 'Warna hitam', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-hitam.jpeg',
+    description: 'Jaket OSTRACISM original warna hitam dengan detail patch resmi dan tampilan streetwear clean.',
+    specs: ['Produk resmi OSTRACISM', 'Warna hitam', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Hitam'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Hitam-M': 8, 'Hitam-L': 8, 'Hitam-XL': 6 }
   },
   {
-    id: 'tm-putih-original-jacket',
-    name: 'Troublemaker Light Grey Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-putih-original-jacket',
+    name: 'OSTRACISM Light Grey Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 285000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:01:00.000Z',
-    image: 'assets/products/tm-putih.jpeg',
-    description: 'Jaket Troublemaker original warna light grey dengan patch Troublemaker dan detail zipper kontras.',
-    specs: ['Produk resmi Troublemaker', 'Warna light grey', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-putih.jpeg',
+    description: 'Jaket OSTRACISM original warna light grey dengan patch OSTRACISM dan detail zipper kontras.',
+    specs: ['Produk resmi OSTRACISM', 'Warna light grey', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Putih'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Putih-M': 7, 'Putih-L': 8, 'Putih-XL': 5 }
   },
   {
-    id: 'tm-pink-original-jacket',
-    name: 'Troublemaker Pink Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-pink-original-jacket',
+    name: 'OSTRACISM Pink Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 285000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:02:00.000Z',
-    image: 'assets/products/tm-pink.jpeg',
-    description: 'Jaket Troublemaker original warna pink dengan detail kantong depan, zipper hitam, dan patch resmi.',
-    specs: ['Produk resmi Troublemaker', 'Warna pink', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-pink.jpeg',
+    description: 'Jaket OSTRACISM original warna pink dengan detail kantong depan, zipper hitam, dan patch resmi.',
+    specs: ['Produk resmi OSTRACISM', 'Warna pink', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Pink'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Pink-M': 6, 'Pink-L': 7, 'Pink-XL': 5 }
   },
   {
-    id: 'tm-merah-original-jacket',
-    name: 'Troublemaker Maroon Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-merah-original-jacket',
+    name: 'OSTRACISM Maroon Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 285000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:03:00.000Z',
-    image: 'assets/products/tm-merah.jpeg',
-    description: 'Jaket Troublemaker original warna maroon dengan patch resmi, zipper hitam, dan karakter streetwear tegas.',
-    specs: ['Produk resmi Troublemaker', 'Warna maroon', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-merah.jpeg',
+    description: 'Jaket OSTRACISM original warna maroon dengan patch resmi, zipper hitam, dan karakter streetwear tegas.',
+    specs: ['Produk resmi OSTRACISM', 'Warna maroon', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Maroon'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Maroon-M': 7, 'Maroon-L': 7, 'Maroon-XL': 5 }
   },
   {
-    id: 'tm-biru-original-jacket',
-    name: 'Troublemaker Navy Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-biru-original-jacket',
+    name: 'OSTRACISM Navy Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 285000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:04:00.000Z',
-    image: 'assets/products/tm-biru.jpeg',
-    description: 'Jaket Troublemaker original warna navy dengan detail patch resmi, zipper hitam, dan gaya streetwear clean.',
-    specs: ['Produk resmi Troublemaker', 'Warna navy', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-biru.jpeg',
+    description: 'Jaket OSTRACISM original warna navy dengan detail patch resmi, zipper hitam, dan gaya streetwear clean.',
+    specs: ['Produk resmi OSTRACISM', 'Warna navy', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Navy'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Navy-M': 7, 'Navy-L': 7, 'Navy-XL': 5 }
   },
   {
-    id: 'tm-olive-original-jacket',
-    name: 'Troublemaker Olive Original Jacket',
-    brand: 'Troublemaker',
+    id: 'os-olive-original-jacket',
+    name: 'OSTRACISM Olive Original Jacket',
+    brand: 'OSTRACISM',
     category: 'Coach Jacket',
     price: 285000,
     discount: 0,
     rating: 5,
     reviews: 1,
     createdAt: '2026-07-07T00:05:00.000Z',
-    image: 'assets/products/tm-olive.jpeg',
-    description: 'Jaket Troublemaker original warna olive dengan detail patch resmi, zipper hitam, dan tampilan streetwear clean.',
-    specs: ['Produk resmi Troublemaker', 'Warna olive', 'Full zipper', 'Patch Troublemaker original', 'Foto produk asli'],
+    image: 'assets/products/os-olive.jpeg',
+    description: 'Jaket OSTRACISM original warna olive dengan detail patch resmi, zipper hitam, dan tampilan streetwear clean.',
+    specs: ['Produk resmi OSTRACISM', 'Warna olive', 'Full zipper', 'Patch OSTRACISM original', 'Foto produk asli'],
     colors: ['Olive'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Olive-M': 7, 'Olive-L': 7, 'Olive-XL': 5 }
@@ -187,15 +187,67 @@ const DEFAULT_PRODUCTS = [
     colors: ['Cream'],
     sizes: ['M', 'L', 'XL'],
     stock: { 'Cream-M': 5, 'Cream-L': 6, 'Cream-XL': 4 }
+  },
+  {
+    id: 'os-cargo-shorts-black',
+    name: 'OSTRACISM Cargo Shorts Black',
+    brand: 'OSTRACISM',
+    category: 'Cargo Shorts',
+    price: 185000,
+    discount: 0,
+    rating: 5,
+    reviews: 1,
+    createdAt: '2026-07-09T00:00:00.000Z',
+    image: 'assets/products/celana-cargo-hitam.jpeg',
+    description: 'Celana pendek cargo OSTRACISM warna hitam dengan kantong utilitas dan patch brand untuk gaya streetwear harian.',
+    specs: ['Produk OSTRACISM', 'Warna hitam', 'Model cargo shorts', 'Pinggang elastis', 'Foto produk asli'],
+    colors: ['Hitam'],
+    sizes: ['M', 'L', 'XL'],
+    stock: { 'Hitam-M': 8, 'Hitam-L': 8, 'Hitam-XL': 6 }
+  },
+  {
+    id: 'os-cargo-shorts-olive',
+    name: 'OSTRACISM Cargo Shorts Olive',
+    brand: 'OSTRACISM',
+    category: 'Cargo Shorts',
+    price: 185000,
+    discount: 0,
+    rating: 5,
+    reviews: 1,
+    createdAt: '2026-07-09T00:01:00.000Z',
+    image: 'assets/products/celana-cargo-olive.jpeg',
+    description: 'Celana pendek cargo OSTRACISM warna olive dengan kantong samping, bahan ringan, dan tampilan streetwear clean.',
+    specs: ['Produk OSTRACISM', 'Warna olive', 'Model cargo shorts', 'Pinggang elastis', 'Foto produk asli'],
+    colors: ['Olive'],
+    sizes: ['M', 'L', 'XL'],
+    stock: { 'Olive-M': 8, 'Olive-L': 8, 'Olive-XL': 6 }
+  },
+  {
+    id: 'os-cargo-shorts-navy',
+    name: 'OSTRACISM Cargo Shorts Navy',
+    brand: 'OSTRACISM',
+    category: 'Cargo Shorts',
+    price: 185000,
+    discount: 0,
+    rating: 5,
+    reviews: 1,
+    createdAt: '2026-07-09T00:02:00.000Z',
+    image: 'assets/products/celana-cargo-navy.jpg',
+    description: 'Celana pendek OSTRACISM warna navy dengan potongan santai, kantong praktis, dan patch brand di bagian depan.',
+    specs: ['Produk OSTRACISM', 'Warna navy', 'Model casual shorts', 'Pinggang elastis', 'Foto produk asli'],
+    colors: ['Navy'],
+    sizes: ['M', 'L', 'XL'],
+    stock: { 'Navy-M': 8, 'Navy-L': 8, 'Navy-XL': 6 }
   }
+
 ];
 const LEGACY_DEMO_IDS = new Set([
-  'tm-bomber-black',
-  'tm-hoodie-ash',
-  'tm-denim-blue',
-  'tm-varsity-maroon',
-  'tm-windbreaker-navy',
-  'tm-coach-black'
+  'os-bomber-black',
+  'os-hoodie-ash',
+  'os-denim-blue',
+  'os-varsity-maroon',
+  'os-windbreaker-navy',
+  'os-coach-black'
 ]);
 
 const els = {
@@ -268,14 +320,14 @@ const els = {
 
 const money = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
 const STORE_KEYS = {
-  products: 'troubleMakerProducts',
-  cart: 'troubleMakerCart',
-  wishlist: 'troubleMakerWishlist',
-  orders: 'troubleMakerOrders',
-  users: 'troubleMakerUsers',
-  customer: 'troubleMakerCustomer',
-  admin: 'troubleMakerAdmin',
-  seedVersion: 'troubleMakerSeedVersion'
+  products: 'ostracismProducts',
+  cart: 'ostracismCart',
+  wishlist: 'ostracismWishlist',
+  orders: 'ostracismOrders',
+  users: 'ostracismUsers',
+  customer: 'ostracismCustomer',
+  admin: 'ostracismAdmin',
+  seedVersion: 'ostracismSeedVersion'
 };
 
 let activeProduct = null;
@@ -397,7 +449,7 @@ function filterCopy(count) {
 function syncHeroProduct() {
   if (!els.heroProductImage || !els.heroProductEmpty) return;
   els.heroProductImage.src = HERO_TITLE_IMAGE;
-  els.heroProductImage.alt = 'Model memakai jaket Troublemaker hitam dengan hood dan kacamata';
+  els.heroProductImage.alt = 'Model memakai jaket OSTRACISM hitam dengan hood dan kacamata';
   els.heroProductImage.hidden = false;
   els.heroProductEmpty.hidden = true;
 }
@@ -408,7 +460,7 @@ function productCard(product) {
   const imageUrl = safeImageUrl(product.image);
   const productId = escapeHtml(product.id);
   const productName = escapeHtml(product.name);
-  const productBrand = escapeHtml(product.brand || 'Troublemaker');
+  const productBrand = escapeHtml(product.brand || 'OSTRACISM');
   const productCategory = escapeHtml(product.category || 'Jacket');
   const image = hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${productName}" loading="lazy">` : `<div class="official-image-missing"><span>Official image required</span></div>`;
   return `<article class="product-card reveal">
@@ -421,7 +473,7 @@ function productCard(product) {
         <div><h3>${productName}</h3><span class="product-brand">${productBrand} / ${productCategory}</span></div>
         <button class="small-button icon-only" data-wishlist="${productId}" type="button" aria-label="Wishlist ${productName}">${isWish ? 'Saved' : 'Wish'}</button>
       </div>
-      <p>${escapeHtml(product.description || 'Produk resmi Troublemaker.')}</p>
+      <p>${escapeHtml(product.description || 'Produk resmi OSTRACISM.')}</p>
       <div class="price-row"><strong>${money.format(finalPrice)}</strong>${product.discount ? `<del>${money.format(product.price)}</del>` : ''}</div>
       <div class="swatches">${(product.colors || []).map((color) => `<span class="swatch" style="background:${colorValue(color)}" title="${escapeHtml(color)}"></span>`).join('')}<span>${escapeHtml((product.sizes || []).join(', '))}</span><span>${totalStock(product)} stok</span></div>
       <div class="product-actions"><button class="primary-button" data-detail="${productId}" type="button">Detail</button><button class="secondary-button" data-quick="${productId}" type="button">Tambah</button></div>
@@ -440,14 +492,14 @@ function openProduct(id) {
   } else {
     els.modalImage.hidden = true;
   }
-  els.modalBrand.textContent = `${product.brand || 'Troublemaker'} / ${product.category || 'Jacket'}`;
+  els.modalBrand.textContent = `${product.brand || 'OSTRACISM'} / ${product.category || 'Jacket'}`;
   els.modalTitle.textContent = product.name;
-  els.modalDescription.textContent = product.description || 'Produk resmi Troublemaker.';
+  els.modalDescription.textContent = product.description || 'Produk resmi OSTRACISM.';
   els.modalRating.textContent = product.rating ? `Rating ${product.rating} / ${product.reviews || 0} ulasan` : 'Official product';
   els.modalPrice.innerHTML = `<strong>${money.format(salePrice(product))}</strong>${product.discount ? `<del>${money.format(product.price)}</del>` : ''}`;
   els.modalColor.innerHTML = (product.colors || []).map((color) => `<option value="${escapeHtml(color)}">${escapeHtml(color)}</option>`).join('');
   els.modalSize.innerHTML = (product.sizes || []).map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join('');
-  els.modalSpecs.innerHTML = (product.specs || ['Official Troublemaker product']).map((spec) => `<span>${escapeHtml(spec)}</span>`).join('');
+  els.modalSpecs.innerHTML = (product.specs || ['Official OSTRACISM product']).map((spec) => `<span>${escapeHtml(spec)}</span>`).join('');
   updateModalStock();
   els.productModal.classList.add('open');
   els.productModal.setAttribute('aria-hidden', 'false');
@@ -495,11 +547,11 @@ function renderCart() {
     if (!product) return '';
     const name = escapeHtml(product.name);
     const imageUrl = safeImageUrl(product.image);
-    const image = hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${name}">` : '<div class="cart-image-fallback">TM</div>';
+    const image = hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${name}">` : '<div class="cart-image-fallback">OS</div>';
     return `<article class="cart-item">
       <div class="cart-item-media">${image}</div>
       <div class="cart-item-info">
-        <span class="cart-item-brand">${escapeHtml(product.brand || 'Troublemaker')}</span>
+        <span class="cart-item-brand">${escapeHtml(product.brand || 'OSTRACISM')}</span>
         <h3>${name}</h3>
         <div class="cart-meta"><span>Color ${escapeHtml(item.color)}</span><span>Size ${escapeHtml(item.size)}</span><span>${money.format(item.price)}</span></div>
         <div class="quantity-row" aria-label="Jumlah ${name}"><button data-qty="${index}|-1" type="button">-</button><strong>${Number(item.qty || 0)}</strong><button data-qty="${index}|1" type="button">+</button></div>
@@ -522,7 +574,7 @@ function cartSummary() {
   let shipping = Number(courier[1] || 0);
   const voucher = (els.voucherInput?.value || '').trim().toUpperCase();
   const serviceFee = 0;
-  let discount = voucher === 'TM10' ? Math.round(subtotal * 0.1) : 0;
+  let discount = voucher === 'OS10' ? Math.round(subtotal * 0.1) : 0;
   if (voucher === 'FREESHIP') shipping = 0;
   discount = Math.min(discount, subtotal);
   return { subtotal, shipping, discount, serviceFee, total: Math.max(subtotal + shipping + serviceFee - discount, 0), voucher };
@@ -534,7 +586,7 @@ function renderCheckoutItems() {
     const name = product?.name || 'Produk tidak tersedia';
     const unitPrice = Number(item.price || 0);
     const imageUrl = product ? safeImageUrl(product.image) : '';
-    const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="checkout-image-fallback">TM</div>';
+    const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="checkout-image-fallback">OS</div>';
     return `<article class="checkout-summary-item">
       ${image}
       <div>
@@ -598,9 +650,9 @@ function visibleOrders() {
 function orderItemDetail(item) {
   const product = products.find((entry) => entry.id === item.productId);
   const name = product?.name || 'Produk tidak tersedia';
-  const brand = product?.brand || 'Troublemaker';
+  const brand = product?.brand || 'OSTRACISM';
   const imageUrl = product ? safeImageUrl(product.image) : '';
-  const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="order-image-fallback">TM</div>';
+  const image = product && hasOfficialImage(product) ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}">` : '<div class="order-image-fallback">OS</div>';
   return `<div class="order-item">
     ${image}
     <div>
@@ -772,7 +824,7 @@ function bindStorefront() {
     ].filter(Boolean);
     const addressNote = document.getElementById('recipient-note').value.trim();
     const order = {
-      number: `TM-${Date.now().toString().slice(-7)}`,
+      number: `OS-${Date.now().toString().slice(-7)}`,
       customer: document.getElementById('recipient-name').value,
       email: document.getElementById('recipient-email').value,
       phone: document.getElementById('recipient-phone').value,
@@ -848,7 +900,7 @@ function bindAdmin() {
     if (cancelEdit) cancelEdit.hidden = true;
     updateImagePreview('');
     const brand = document.getElementById('admin-product-brand');
-    if (brand) brand.value = 'Troublemaker';
+    if (brand) brand.value = 'OSTRACISM';
   }
   function updateImagePreview(src) {
     if (!imagePreview) return;
@@ -904,7 +956,7 @@ function bindAdmin() {
     const payload = {
       id: productId?.value || `official-${Date.now()}`,
       name,
-      brand: document.getElementById('admin-product-brand').value.trim() || 'Troublemaker',
+      brand: document.getElementById('admin-product-brand').value.trim() || 'OSTRACISM',
       category: document.getElementById('admin-product-category').value,
       price: Number(document.getElementById('admin-product-price').value),
       discount: Number(document.getElementById('admin-product-discount').value || 0),
@@ -913,7 +965,7 @@ function bindAdmin() {
       createdAt: productId?.value ? (products.find((item) => item.id === productId.value)?.createdAt || new Date().toISOString()) : new Date().toISOString(),
       image,
       description: document.getElementById('admin-product-description').value.trim(),
-      specs: ['Produk resmi Troublemaker', 'Foto resmi dikelola admin'],
+      specs: ['Produk resmi OSTRACISM', 'Foto resmi dikelola admin'],
       colors,
       sizes,
       stock
@@ -941,7 +993,7 @@ function bindAdmin() {
       productId.value = product.id;
       currentImage.value = product.image || '';
       document.getElementById('admin-product-name').value = product.name || '';
-      document.getElementById('admin-product-brand').value = product.brand || 'Troublemaker';
+      document.getElementById('admin-product-brand').value = product.brand || 'OSTRACISM';
       document.getElementById('admin-product-category').value = product.category || 'Bomber';
       document.getElementById('admin-product-price').value = product.price || 0;
       document.getElementById('admin-product-discount').value = product.discount || 0;
@@ -978,7 +1030,7 @@ function bindAdmin() {
     const order = orders.find((item) => item.number === number);
     if (!order) return;
     order.status = status;
-    if (status === 'Dikirim' && !order.tracking) order.tracking = `TMX${Date.now().toString().slice(-8)}`;
+    if (status === 'Dikirim' && !order.tracking) order.tracking = `OSX${Date.now().toString().slice(-8)}`;
     write(STORE_KEYS.orders, orders);
     renderAdmin();
     toast(`Status ${number} diperbarui.`);
@@ -1001,7 +1053,7 @@ function renderAdmin() {
     const imageUrl = safeImageUrl(product.image);
     const image = hasOfficialImage(product) ? `<img class="admin-product-thumb" src="${escapeHtml(imageUrl)}" alt="${name}">` : '<span class="admin-no-image">Foto wajib</span>';
     return `<tr><td>${image}</td><td>${name}<br><small>${escapeHtml(product.brand)}</small></td><td>${escapeHtml(product.category)}</td><td>${money.format(salePrice(product))}</td><td>${totalStock(product)}</td><td>${hasOfficialImage(product) ? 'Aktif' : 'Perlu foto resmi'}</td><td><button class="small-button" data-product-edit="${id}" type="button">Edit</button> <button class="small-button danger-button" data-product-delete="${id}" type="button">Hapus</button></td></tr>`;
-  }).join('') : '<tr><td colspan="7">Belum ada produk resmi. Upload foto jaket Troublemaker asli melalui form di atas.</td></tr>';
+  }).join('') : '<tr><td colspan="7">Belum ada produk resmi. Upload foto jaket OSTRACISM asli melalui form di atas.</td></tr>';
   const orderTable = document.getElementById('admin-orders-table');
   if (orderTable) orderTable.innerHTML = orders.length ? orders.map((order) => {
     const number = escapeHtml(order.number);

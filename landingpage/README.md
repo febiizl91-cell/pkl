@@ -1,4 +1,4 @@
-# TroubleMaker
+# OSTRACISM
 
 Implementasi static web app toko online jaket streetwear dengan katalog, filter ukuran, detail produk, login/register, wishlist, cart, checkout, riwayat pesanan, dan admin dashboard demo.
 
@@ -27,7 +27,7 @@ Data produk, akun customer, cart, wishlist, dan pesanan disimpan di `localStorag
 
 ## Catatan Produk Asli
 
-Katalog default sengaja kosong karena website hanya boleh menampilkan jaket Troublemaker resmi. Tambahkan nama produk, harga, stok, dan URL/path foto produk asli melalui dashboard admin. Jika belum ada foto resmi, storefront akan menampilkan empty state dan tidak memakai gambar dummy.
+Katalog default sengaja kosong karena website hanya boleh menampilkan jaket OSTRACISM resmi. Tambahkan nama produk, harga, stok, dan URL/path foto produk asli melalui dashboard admin. Jika belum ada foto resmi, storefront akan menampilkan empty state dan tidak memakai gambar dummy.
 
 ## Halaman Utama
 
